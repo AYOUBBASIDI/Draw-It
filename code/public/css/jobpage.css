@@ -1,0 +1,102 @@
+.newjob-content form{
+    width: 34%;
+    margin-left: 34%;
+    margin-top: 2%;
+}
+.newjob-content h1{
+    font-family: "Itim", cursive;
+    color: white;
+    text-align: center;
+    margin-top: 5%;
+}
+.row-type-one input{
+    width: 45%;
+    border: none;
+    padding: 1%;
+    border-radius: 6px;
+    height: 27px;
+    font-family: "Itim", cursive;
+}
+.newjob-content textarea{
+    max-width: 98%;
+    margin-top: 5%;
+    border: none;
+    border-radius: 5px;
+}
+.addjob {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 100%;
+    height: 35px;
+    background: #F3A1FF;
+    color: #220554;
+    margin-top: 5%;
+  }
+    .cancel a {
+    text-decoration:none;
+    color: #F3A1FF;
+  }
+   .addjob a{
+    text-decoration:none;
+    color: #220554;
+  }
+  .cancel {
+    background: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 100%;
+    height: 35px;
+    border:solid 3px #F3A1FF;
+    color: #F3A1FF !important;
+    margin-top: 5%;
+    text-decoration:none;
+  }
+
+.row-type-one{
+    margin-top: 5%;
+}
+.color{
+    width: 60px !important;
+    height: 29px !important;
+    margin-left:7%;
+}
+.newjob-content form label{
+    font-family: "Itim", cursive;
+    color: white;
+}
+.some{
+    margin-left: 4%;
+}
+.newColor{
+    display: flex;
+    text-align: center;
+    color:white;
+    font-family: "Itim", cursive;
+    position: absolute;
+    top: 30%;
+    right: 22%;
+}
+.newColor a img{
+    width: 20px;
+    width: 20px;
+    margin-left: 30%;
+}
+.colors-added{
+    background-color: white;
+    font-family: "Itim", cursive;
+    color: #220554;
+    position: absolute;
+    padding: 6px 12px;
+    border-radius: 8px;
+    top: 32%;
+    right: 9%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: flex-start;
+}
+.colors-added h4{
+    margin-top: 4%;
+}
+

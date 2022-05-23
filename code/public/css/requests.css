@@ -1,0 +1,46 @@
+.requests-page{
+    margin-top: 8%;
+}
+.requests{
+    overflow-y: scroll;
+    max-height: 338px;
+}
+.request{
+    padding: 1px 9px;
+    border: solid 2px #f3a1ff;
+    display: flex;
+    color: white;
+    font-family: "Itim", cursive;
+    justify-content: space-between;
+    align-items: center;
+    width: 93%;
+    margin-top: 1%;
+    margin-left: 3%;
+    border-radius: 10px;
+    height: 48px;
+}
+.request a img{
+    width: 20px;
+}
+.budget{
+    color: white;
+    font-family: "Itim", cursive;
+    font-weight: bold;
+    margin-left: 3%;
+    margin-top: 3%;
+}
+.notif{
+    position: absolute;
+    top: 18%;
+    right: 0.5%;
+}
+.notif ul{
+    top: -5%;
+    right: 20%;
+    position: absolute;
+    font-family: "Itim", cursive;
+    font-size: 14px;
+}
+.notif img{
+    width: 82%;
+}

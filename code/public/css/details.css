@@ -1,0 +1,69 @@
+.details{
+    border: solid 3px #f3a1ff;
+    padding: 1% 2%;
+    border-radius: 10px;
+    font-family: "Itim", cursive;
+    width: 44%;
+    margin-left: 27%;
+    margin-top: 6%;
+}
+.jobCreate{
+    border: solid 3px #f3a1ff;
+    padding: 1% 2%;
+    border-radius: 10px;
+    font-family: "Itim", cursive;
+    width: 44%;
+    margin-left: 28%;
+    margin-top: -1%;
+}
+.details label ,.jobCreate label{
+    font-size: 18px;
+    color: #F3A1FF;
+}
+.line{
+    display: flex;
+    align-items: center;
+}
+.line-content{
+    margin-left: 3%;
+}
+.details p ,.jobCreate p{
+    color:white;
+}
+.content-jobcreate h2{
+    color: #fff;
+    font-family: "Itim", cursive;
+    margin-left: 44%;
+    margin-top: 4%;
+    font-size: 27px;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.cancel-job {
+    background: none;
+    font-family: "Itim", cursive;
+    border-radius: 4px;
+    width: 20%;
+    color: #F3A1FF;
+    border: solid 3px #F3A1FF;
+    margin-left: 37%;
+    height: 30px;
+    margin-top: 3%;
+    cursor: pointer;
+  }
+  
+  .submit-job {
+    border-radius: 7px;
+    width: 20%;
+    height: 30px;
+    background: #F3A1FF;
+    margin-left: 3%;
+    color: #220554;
+    font-family: "Itim", cursive;
+    margin-top: 3%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+  }

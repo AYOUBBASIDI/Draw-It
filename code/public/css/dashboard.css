@@ -1,0 +1,346 @@
+*::-webkit-scrollbar,
+*::-webkit-scrollbar-thumb {
+    width: 26px;
+    border-radius: 13px;
+    background-clip: padding-box;
+    border: 10px solid transparent;
+    color: #f3a1ff;
+}
+
+*::-webkit-scrollbar-thumb {
+    box-shadow: inset 0 0 0 10px;
+}
+.dashboard-page{
+    background-image: url(../img/back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 94vh;
+    width: 98vw;
+    overflow: hidden;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2%;
+    padding: 0 3%;
+}
+.logo {
+    width: 10%;
+    height: 70%;
+    /* margin-left: 3%; */
+  }
+.icon-menu{
+    width:2%;
+    cursor: pointer;
+}
+.exit-menu{
+    width:2%;
+    cursor: pointer;
+    z-index:5;
+    display:none;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-left: -1%;
+}
+.active{
+    text-decoration: underline;
+    text-decoration-color: #f3a1ff;
+    text-underline-position: under;
+}
+.menu a{
+    color: #FFF;
+    font-family: "Itim", cursive;
+    font-size: 20px;
+    text-decoration: none;
+}
+.rendred-menu-btn{
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 46%;
+    height: 35px;
+    background: #F3A1FF;
+    margin-top: 1%;
+    cursor: pointer;
+  }
+  .all_jobs_menu_btn_client{
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 30%;
+    height: 35px;
+    background: #F3A1FF;
+    margin-top: 1%;
+    cursor: pointer;
+  }
+
+  .jobs-menu-btn{
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 46%;
+    height: 35px;
+    background: #F9CDFF;
+    margin-top: 1%;
+    cursor: pointer;
+  }
+
+  .accepted_jobs_menu_btn_client{
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 30%;
+    height: 35px;
+    background: #F9CDFF;
+    margin-top: 1%;
+    cursor: pointer;
+  }
+  .waiting_jobs_menu_btn_client{
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 30%;
+    height: 35px;
+    background: #F9CDFF;
+    margin-top: 1%;
+    cursor: pointer;
+  }
+
+.rendred-menu-btn a, .jobs-menu-btn a{
+    text-decoration: none;
+    color: #220554;
+}
+.dashborad-menu{
+    margin-left: 3%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    width: 40%;
+}
+.dashborad-menu-client{
+    margin-left: 3%;
+    margin-top: 4%;
+    display: flex;
+    justify-content: space-between;
+    width: 55%;
+}
+.all-rendred{
+    margin-top: 3%;
+    overflow-y: scroll;
+    max-height: 338px;
+}
+.jobs{
+    margin-top: 3%;
+    overflow-y: scroll;
+    max-height: 338px;
+    display: none;
+}
+.rendred{
+    padding: 1px 9px;
+    border: solid 2px #f3a1ff;
+    display: flex;
+    color: white;
+    font-family: "Itim", cursive;
+    justify-content: space-between;
+    align-items: center;
+    width: 93%;
+    margin-top: 1%;
+    margin-left: 3%;
+    border-radius: 10px;
+    height: 48px;
+}
+.rendred a{
+    color: white;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+.icon-download , .icon-denied,.icon-delete{
+    width: 25px;
+}
+.icon-accept {
+    width: 30px;
+}
+.open{
+    background-color: #f3a1ff;
+}
+.close{
+    background-color: #f9cdff;
+}
+.newjob a{
+    color:white;
+    font-family: "Itim", cursive;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 145px;
+    text-decoration: none;
+}
+.newjob a:hover{
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+    text-underline-position: under;
+}
+.newjob a img{
+    width:23px;
+}
+.newjob{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    top: 20%;
+    right: 6%;
+}
+.all-jobs{
+    color: #FFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: 1%;
+    padding: 0px 10px;
+}
+.accepted-jobs{
+    color:#FFF;
+    display: none;
+}
+.waiting-jobs{
+    color:#FFF;
+    display: none;
+}
+.content-alljobs{
+    width: 69%;
+    height: 424px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 2%;
+    overflow: auto;
+}
+.filter{
+    /* background: forestgreen; */
+    width: 25%;
+    height: 361px;
+    color: white;
+    font-family: "Itim", cursive;
+}
+.posted-job{
+    border: solid 2px;
+    padding: 0 10px;
+    width: 43%;
+    position: relative;
+    color: white;
+    font-family: "Itim", cursive;
+    border-radius: 8px;
+    margin-top: 2%;
+}
+.see-more{
+    position: absolute;
+    right: 3%;
+    bottom: -2%;
+}
+.price-filter{
+    display: flex;
+    flex-wrap: wrap;
+    /* width: 62%; */
+    align-items: center;
+    margin-left: 5%;
+}
+.price-choice{
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+.filter form label{
+    margin-left: 5%;
+}
+.hr{
+    height: 1px;
+    background-color: #F9CDFF;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 6%;
+}
+.filter form{
+    border-left: solid 1px #F9CDFF;
+}
+.filter form select{
+    background: none;
+    border: solid 2px #F9CDFF;
+    width: 82%;
+    margin-left: 7%;
+    padding: 1% 2%;
+    border-radius: 5px;
+    color: white;
+    font-family: "Itim", cursive;
+}
+.filter form select option{
+    background-color:#F9CDFF ;
+    color:#220554;
+    font-family: "Itim", cursive;
+}
+option:hover{
+    background-color:#220554 ;
+    color:#F9CDFF;
+}
+.apply-filter{
+    border-radius: 7px;
+    width: 60%;
+    height: 30px;
+    background: #F3A1FF;
+    margin-left: 20%;
+    color: #220554;
+    font-family: "Itim", cursive;
+    margin-top: 7%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.job-accept{
+    padding: 1px 9px;
+    border: solid 2px #f3a1ff;
+    display: flex;
+    color: white;
+    font-family: "Itim", cursive;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin-top: 1%;
+    margin-left: 10%;
+    border-radius: 10px;
+    height: 48px;
+}
+.accepted-job-content{
+    margin-top: 2%;
+}
+.content-alljobs-waiting{
+    width: 70%;
+    height: 424px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0px 2%;
+    overflow: auto;
+    margin-left: 15%;
+    margin-top: 1%;
+}
+.requestAjob{
+    margin-top: 5% !important;
+}
+.btn-request{
+    margin-left: 61% !important;
+}
+.see-more a{
+    color: #ffffff;
+    text-decoration: underline;
+    text-decoration-color: #ffffff;
+}
+

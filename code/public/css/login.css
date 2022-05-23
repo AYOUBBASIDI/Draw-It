@@ -1,0 +1,92 @@
+.loginPage {
+    background-image: url(../public/img/back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 77vw;
+  }
+  
+  nav img {
+    width: 10%;
+    height: 70%;
+    margin-top: 2%;
+    margin-left: 3%;
+  }
+  
+  .row input {
+    width: 98%;
+    height: 35px;
+    padding: 0.5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    border: none;
+    font-family: "Itim", cursive;
+    padding-left: 2%;
+  }
+  
+  .loginForm {
+    position: absolute;
+    width: 35%;
+    left: 33%;
+    top: 20%;
+  }
+  
+  .loginForm h3 {
+    text-align: center;
+    color: white;
+    font-family: "Itim", cursive;
+  }
+  
+  .log {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    background: #F3A1FF;
+    color: #220554;
+    margin-top: 5%;
+    cursor: pointer;
+  }
+  
+  .creer {
+    border: solid 3px #F3A1FF;
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    background: none;
+    color: #F3A1FF;
+    font-family: "Itim", cursive;
+    margin-top: 5%;
+    cursor: pointer; 
+  }
+  .creer a{
+    text-decoration: none;
+    color: #F3A1FF;
+  }
+  
+  .btnForm p {
+    font-family: "Itim", cursive;
+    color: white;
+    margin-top: 5%;
+  }
+  
+  .btnForm p:before {
+    content: "____________";
+    margin: auto;
+    margin-right: 10px;
+  }
+  
+  .btnForm p:after {
+    content: "_____________";
+    margin: auto;
+    margin-left: 10px;
+  }
+  
+  hr:not([size]) {
+    background: white;
+    height: 0px;
+    color: white;
+  }
+  /*# sourceMappingURL=login.css.map */
+  

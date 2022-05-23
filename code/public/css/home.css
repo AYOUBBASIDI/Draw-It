@@ -1,0 +1,301 @@
+.homePage {
+    background-image: url('../public/img/home.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 97vh;
+    width: 77vw;
+  }
+  
+  nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 98vw;
+  }
+  
+  nav img {
+    width: 10%;
+    height: 70%;
+    margin-top: 2%;
+    margin-left: 3%;
+  }
+  
+  nav div {
+    width: 20%;
+    margin-top: 2%;
+    margin-right: 4%;
+  }
+  
+  .content h1 {
+    font-family: "Itim", cursive;
+    color: #F3A1FF;
+    margin-left: 4%;
+    margin-top: 7%;
+    font-size: 50px;
+  }
+  
+  .content p {
+    font-family: "Itim", cursive;
+    color: white;
+    margin-left: 4%;
+    font-size: 23px;
+  }
+  
+  .btn1 {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 15%;
+    height: 40px;
+    background: #F3A1FF;
+    margin-left: 4%;
+    color: #220554;
+    margin-top: 1%;
+    cursor:pointer;
+  }
+  
+  .btn2 {
+    border: solid 3px #F3A1FF;
+    border-radius: 20px;
+    width: 15%;
+    height: 40px;
+    background: none;
+    margin-left: 3%;
+    color: #F3A1FF;
+    font-family: "Itim", cursive;
+    margin-top: 1%;
+    cursor:pointer;
+  }
+  
+  .btn2:hover {
+    background: #F3A1FF;
+    color: #220554;
+  }
+  
+  .check {
+    height: 15px !important;
+    margin-top: 5px;
+  }
+  
+  .login {
+    border: none;
+    border-radius: 20px;
+    width: 45%;
+    height: 40px;
+    background: none;
+    margin-left: 4%;
+    color: #F3A1FF;
+    font-family: "Itim", cursive;
+    margin-top: 1%;
+  }
+  
+  .login:hover {
+    text-decoration: underline;
+  }
+  
+  .login a {
+    text-decoration: none;
+    color: #F3A1FF;
+  }
+  
+  .signup {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 45%;
+    height: 35px;
+    background: #F3A1FF;
+    margin-left: 4%;
+    color: #220554;
+    margin-top: 1%;
+  }
+  
+  .signup a {
+    text-decoration: none;
+    color: #220554;
+  }
+  
+  footer {
+    width: 13%;
+    margin-left: 4%;
+  }
+
+    .powered-icon{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+  
+  footer div img {
+    width: 65%;
+  }
+  
+  footer p {
+    font-family: "Itim", cursive;
+    color: #ffff;
+    font-size: 20px;
+  }
+  
+  .simp {
+    margin-top: 10px;
+    margin-left: 30px;
+  }
+  
+  .show {
+    display: block !important;
+  }
+  
+  .popUp1 {
+    padding-bottom: 2% !important;
+    background-color: #40096E;
+    width: 50%;
+    margin-left: 32%;
+    border-radius: 5px;
+    position: absolute;
+    top: 10%;
+    width: 40%;
+    padding: 1%;
+    display: none;
+  }
+  
+  .popUp1 h3 {
+    text-align: center;
+    color: white;
+    font-family: "Itim", cursive;
+    
+  }
+  
+  .popUp1 form {
+    margin-left: 10%;
+  }
+  
+  .popUp1 form p {
+    font-family: "Itim", cursive;
+    color: white;
+    MARGIN-TOP: -1%;
+  }
+  
+  .popUp2 {
+    padding-bottom: 2% !important;
+    background-color: #40096E;
+    width: 50%;
+    margin-left: 32%;
+    border-radius: 5px;
+    position: absolute;
+    top: 10%;
+    width: 40%;
+    padding: 1%;
+    display: none;
+  }
+  
+  .popUp2 h3 {
+    text-align: center;
+    color: white;
+    font-family: "Itim", cursive;
+  }
+  
+  .popUp2 form {
+    margin-left: 10%;
+  }
+  
+  .popUp2 form p {
+    font-family: "Itim", cursive;
+    color: white;
+    MARGIN-TOP: -1%;
+  }
+  
+  .x {
+    margin-left: 93%;
+    margin-top: 2%;
+    width: 20px;
+    cursor: pointer;
+  }
+  
+  .row2 input {
+    width: 86.5%;
+    margin-top: 5%;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2%;
+    font-family: "Itim", cursive;
+  }
+  
+  .row1 input {
+    margin-top: 2%;
+    border-radius: 5px;
+    border: none;
+    height: 30px;
+    padding: 2%;
+    width: 39%;
+    font-family: "Itim", cursive;
+  }
+  
+  hr {
+    background-color: white;
+  }
+  
+  hr:not([size]) {
+    background: white;
+    border: solid white 0.5px;
+  }
+  
+  .lname {
+    margin-left: 2%;
+  }
+  
+  .creer {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    background: #F3A1FF;
+    color: #220554;
+    margin-top: 1%;
+  }
+  
+  .Log {
+    border: solid 3px #F3A1FF;
+    border-radius: 20px;
+    width: 100%;
+    height: 40px;
+    background: none;
+    color: #F3A1FF;
+    font-family: "Itim", cursive;
+    margin-top: 3%;
+  }
+  
+  .btnPop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 87%;
+  }
+  
+  .row3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 5%;
+  }
+  
+  .row3 p {
+    font-size: 14px;
+    margin-left: 10px;
+  }
+  
+  .mar {
+    margin-left: 3.5%;
+  }
+  /*# sourceMappingURL=style.css.map */

@@ -1,0 +1,72 @@
+.signupPage {
+    background-image: url(../public/img/back.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 98vh;
+    width: 77vw;
+  }
+  
+  nav img {
+    width: 10%;
+    height: 70%;
+    margin-top: 2%;
+    margin-left: 3%;
+  }
+
+  /* .signup-content h1{
+    
+    
+  } */
+  .signup-content{
+      display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-family: "Itim", cursive;
+    color:white;
+    width: 63%;
+    margin-top: 4%;
+    margin-left: 32%;
+  }
+  .signup-choice{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2%;
+  }
+  .for_login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .choice{
+    border: solid 2px #F3A1FF;
+    border-radius: 10px;
+    padding: 2% 5%;
+    width: 36%;
+    position: relative;
+  }
+  .radio-choice{
+    position: absolute;
+    right: 6px;
+  }
+  .btn-signup{
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 70%;
+    height: 35px;
+    background: #F3A1FF;
+    color: #220554;
+    margin-top: 5%;
+    margin-left: 15%;
+    cursor: pointer;
+  }
+  
+  .for_login a{
+    margin-left: 2%;
+    color: #f3a1ff;
+    text-decoration: none;
+  }
+
+  .for_login a:hover{
+    color: #fff;
+  }

@@ -1,0 +1,57 @@
+.hello-page{
+    background-image: url(../img/2.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 97vh;
+    width: 98vw;
+}
+.test-page{
+  background-image: url(../img/back.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 97vh;
+  width: 98vw;
+}
+nav img {
+    width: 10%;
+    height: 70%;
+    margin-top: 2%;
+    margin-left: 3%;
+  }
+  .hello-content p{
+    font-family: "Itim", cursive;
+    color: #40096E;
+    margin-left: 3%;
+    margin-top: 9%;
+    font-size: 35px;
+  }
+  .btn1 {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 13%;
+    height: 40px;
+    background: #40096E;
+    margin-left: 3%;
+    color: #FFF;
+    cursor:pointer;
+  }
+  .btn1 a{
+    text-decoration: none;
+    color:white;
+  }
+  .btn2{
+    border: solid 2px #40096E;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 13%;
+    height: 40px;
+    background: none;
+    margin-left: 3%;
+    color: #40096E;
+    cursor:pointer;
+  }
+  .btn2 a{
+    text-decoration: none;
+    color:#40096E;
+  }

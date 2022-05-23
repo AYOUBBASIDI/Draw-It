@@ -1,0 +1,77 @@
+.deposit-page{
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    margin-left: 32%;
+}
+.header-depose{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-top: 3%;
+    font-family: "Itim", cursive;
+}
+.header-depose h3{
+    color: #FFF;
+    font-size: 21px;
+}
+.method-icon{
+    width: 100px;
+    margin-left: 15%;
+}
+.depo-content label{
+    font-family: "Itim", cursive;
+    color: #FFF;
+    font-size: 18px;
+}
+.depo-content form{
+    border: solid 3px #f3a1ff;
+    padding: 1% 3%;
+    border-radius: 7px;
+    margin-top: -3%;
+    display: flex;
+    flex-direction: column;
+}
+.header-depose p{
+    background: #f3a1ff;
+    padding: 1%;
+    border-radius: 5px;
+    color: #220554;
+}
+.methods{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 62%;
+    margin-left: 15%;
+}
+.account , .depos{
+    background: none;
+    border: solid 2px #f3a1ff;
+    border-radius: 5px;
+    width: 60%;
+    margin-left: 16%;
+    color: #FFF;
+    font-family: "Itim", cursive;
+}
+.methods div{
+    display: flex;
+    align-items: center;
+}
+.deposit {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 6px;
+    width: 30%;
+    height: 30px;
+    background: #F3A1FF;
+    margin-left: 72%;
+    color: #220554;
+    margin-top: 3%;
+    cursor: pointer;
+  }
+    .deposit a{
+        text-decoration: none;
+        color: #220554;
+    }

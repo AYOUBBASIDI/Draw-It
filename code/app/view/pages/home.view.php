@@ -18,26 +18,28 @@
     <div class="popUp1" id="addC">
         <img onclick="hideC()" class="x" src="<?php echo URLROOT ?>public/img/x.png" alt="x">
         <h3>Get in-demand talent on demand</h3><hr/>
-        <form>
+        <form action="<?php echo URLROOT; ?>users/newclient" method="post">
         <div class="row1"><input type="text" placeholder="First name" name="fname" required/>
-        <input class="mar" class="lname" type="text" placeholder="Last name" name="Lname" required/></div>
+        <input class="mar" class="lname" type="text" placeholder="Last name" name="lname" required/></div>
         <div class="row2"><input type="email" placeholder="E-mail Address" name="email" required/></div>
-        <div class="row2"><input type="password" placeholder="password" name="passe" required/></div>
+        <div class="row2"><input type="password" placeholder="password" name="pwd" required/></div>
+        <input type="hidden" name="role" value="client"/>
         <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and Privacy Policy.</p></div>
-        <div class="btnPop"><button class="creer" type="submit">Create My Account</button>
+        <div class="btnPop"><button class="creer" type="submit" name="addclient">Create My Account</button>
         <button class="Log" type="submit">Log In</button></div>
         </form>
     </div>
     <div class="popUp2" id="addD">
         <img onclick="hideD()" class="x" src="<?php echo URLROOT ?>public/img/x.png" alt="x">
         <h3>Build your career right here.</h3><hr/>
-        <form>
+        <form action="<?php echo URLROOT; ?>users/newdesigner" method="post">
         <div class="row1"><input type="text" placeholder="First name" name="fname" required/>
-        <input class="mar" class="lname" type="text" placeholder="Last name" name="Lname" required/></div>
+        <input class="mar" class="lname" type="text" placeholder="Last name" name="lname" required/></div>
         <div class="row2"><input type="email" placeholder="E-mail Address" name="email" required/></div>
-        <div class="row2"><input type="password" placeholder="password" name="passe" required/></div>
+        <div class="row2"><input type="password" placeholder="password" name="pwd" required/></div>
+        <input type="hidden" name="role" value="designer"/>
         <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and Privacy Policy.</p></div>
-        <div class="btnPop"><button class="creer" type="submit">Create My Account</button>
+        <div class="btnPop"><button class="creer" type="submit" name="adddesigner">Create My Account</button>
         <button class="Log" type="submit">Log In</button></div>
         </form>
     </div>
@@ -60,6 +62,8 @@
         function hideD() {
         document.getElementById("addD").classList.remove("show");
         }
+        
+    
 
     </script>
 

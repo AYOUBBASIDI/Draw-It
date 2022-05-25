@@ -19,5 +19,5 @@
     </div>
 </body>
 <script>
-
+window.history.forward();
 </script>

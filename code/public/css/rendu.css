@@ -1,0 +1,46 @@
+.btn-rendu-content{
+    background: #F3A1FF;
+    width: 8%;
+    padding: 1% 0.5%;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2.5%;
+    height: 15px;
+    color:#40096E;
+    cursor:pointer;
+    font-family: "Itim", cursive;
+}
+.btn-rendu{
+    background: #FADBFF;
+    width: 8%;
+    padding: 1% 0.5%;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0.5%;
+    height: 15px;
+    color:#40096E;
+    font-family: "Itim", cursive;
+    cursor:pointer;
+}
+.btn-the-rendu{
+    position: absolute;
+    width: 100%;
+    left: 19.05%;
+    margin-top: -1.5%;
+}
+.part2{
+    display:none;
+}
+.for-rendu{
+    flex-direction: column;
+    color: white;
+  }
+  .change-test{
+    margin-left: 72% !important;
+    margin-top: 2%;
+    width: 29% !important;
+  }

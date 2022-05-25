@@ -3,6 +3,10 @@
 <div class="content-jobcreate">
     <div class="requestAjob jobCreate">
         <div class="line">
+        <label for="owner">Owner :</label>
+        <p class="line-content">Mr. abdellah</p>
+        </div>  
+        <div class="line">
         <label for="type">Type :</label>
         <p class="line-content">Create Logo</p>
         </div>  
@@ -22,7 +26,7 @@
         <div class="line">
         <label for="Price">Price :</label>
         <p class="line-content">10 $</p>
-        <button class="submit-job btn-request">Submit</button>
+        <button class="submit-job btn-request">Request</button>
         </div>   
     </div>
 </div>

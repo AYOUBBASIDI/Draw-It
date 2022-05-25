@@ -76,7 +76,7 @@
             <p>Mr. Abdellah</p>
             <p>Type : Create Logo</p>
             <p>Max Time : 2 days</p>
-            <a><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png"></a>
+            <a href="<?php echo URLROOT; ?>pages/submit_rendu"><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
         </div>
         <div class="job-accept">
             <p>Mr. Abdellah</p>
@@ -87,7 +87,7 @@
             <p>Mr. Abdellah</p>
             <p>Type : Create Logo</p>
             <p>Max Time : 2 days</p>
-            <a><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png"></a>
+            <a><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
         </div>        <div class="job-accept">
             <p>Mr. Abdellah</p>
             <p>Type : Create Logo</p>

@@ -37,7 +37,15 @@ class Pages extends controller
         $this-> view('client/newjob');
     }
     public function job_create(){
-        $this-> view('client/jobinfo');
+
+        $data = [
+            "type" => $_POST["type"],
+            "favcolor" => $_POST["favcolor"],
+            "delay" => $_POST["delay"],
+            "price" => $_POST["price"],
+            "description" => $_POST["description"],
+        ];
+        $this-> view('client/jobinfo' , $data);
     }
     public function requests(){
         $this-> view('client/requests');
@@ -68,6 +76,12 @@ class Pages extends controller
     }
     public function details_job(){
         $this-> view('designer/details');
+    }
+    public function review(){
+        $this-> view('designer/review');
+    }
+    public function submit_rendu(){
+        $this-> view('designer/rendu');
     }
 
 }

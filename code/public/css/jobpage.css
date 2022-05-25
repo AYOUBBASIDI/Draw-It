@@ -99,4 +99,13 @@
 .colors-added h4{
     margin-top: 4%;
 }
+.hidden-form{
+    margin-top: -51px;
+    position: absolute;
+    width: 100%;
+    left: 77%;
+}
+.div-form-hidden{
+    position: relative;
+}
 

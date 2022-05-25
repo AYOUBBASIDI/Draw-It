@@ -3,6 +3,10 @@
 <div class="content-jobcreate">
     <div class="requestAjob jobCreate">
         <div class="line">
+        <label for="owner">Owner :</label>
+        <p class="line-content">Mr. abdellah</p>
+        </div>  
+        <div class="line">
         <label for="type">Type :</label>
         <p class="line-content">Create Logo</p>
         </div>  

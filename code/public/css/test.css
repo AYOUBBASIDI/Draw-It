@@ -1,0 +1,132 @@
+.test-content{
+    color: #FFF;
+    font-family: "Itim", cursive;
+    margin-left: 25%;
+}
+  .part2{
+    display:none;
+  }
+.description{
+    border: solid 2px #F3A1FF;
+    max-width: 66%;
+    border-radius: 10px;
+    padding: 1% 2%;
+    margin-top: 1%;
+    font-size: 18px;
+}
+
+.btn-test{
+    display: flex;
+    color: #220554;
+    margin-top: 5%;
+    margin-left: 22%;
+}
+  .file-rendu{
+    border: solid #F3A1FF;
+    width: 45%;
+    display: flex !important;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center !important;
+  }
+  .description div{
+    align-items: baseline;
+    display: inherit;
+}
+.btn-test-content{
+    background: #F3A1FF;
+    width: 15%;
+    padding: 0.7% 1%;
+    border-radius: 23px 0 0 23px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor:pointer;
+}
+.btn-rendered{
+    background: white;
+    width: 15%;
+    padding: 0.7% 1%;
+    border-radius: 0 23px 23px 0;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    justify-content: center;
+    cursor:pointer;
+}
+.change-test {
+    border: none;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    background: #F3A1FF;
+    margin-left: 3%;
+    color: #220554;
+    width: 16%;
+    height: 35px;
+    cursor: pointer;
+  }
+  .change-test a{
+    text-decoration: none;
+    color:#220554;
+  }
+  .log-out{
+    border: solid 2px #F3A1FF;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 16%;
+    height: 35px;
+    background: none;
+    margin-left: 35%;
+    margin-top: 2%;
+    color: #F3A1FF;
+    cursor: pointer;
+  }
+  .log-out a{
+    text-decoration: none;
+    color:#F3A1FF;
+  }
+  .btn-operation{
+    position: absolute;
+    width: 71.5%;
+    margin-top: 0%;
+  }
+
+  .file-rendu img{
+    width: 30px;
+  }
+  .for-rendu{
+    justify-content: center;
+    display: flex;
+  }
+  .file-rendu input{
+    position: absolute;
+    bottom: 28px;
+    opacity: 0;
+  }
+  .for-rendu h2{
+    display: flex;
+    justify-content: center;
+  }
+  .message{
+    width: 45%;
+  }
+  .message textarea{
+    border: 2px solid #F3A1FF;
+    background: none;
+    min-width: 92%;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    min-height: 113px;
+    max-height: 113px;
+    outline: none;
+    max-width: 92%;
+  }
+  .rendu-content{
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between;
+  }
+

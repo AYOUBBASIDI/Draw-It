@@ -33,7 +33,7 @@
             <input type="hidden" name="delay" value="<?php echo $data["delay"]; ?>">
             <input type="hidden" name="price" value="<?php echo $data["price"]; ?>">
             <input type="hidden" name="description" value="<?php echo $data["description"]; ?>">
-            <input type="hidden" name="name" value="<?php echo $_SESSION['fname']; echo $_SESSION['lname']; ?>">
+            <input type="hidden" name="name" value="<?php echo $_SESSION['id']; ?>">
         <button type="submit" name="addjob" class="submit-job">Submit</button>
         </form>
         

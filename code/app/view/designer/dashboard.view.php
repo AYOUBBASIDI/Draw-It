@@ -15,7 +15,7 @@
             foreach ($data["jobs"] as $job){     
          ?>
         <div class="posted-job">
-            <p><?php echo $job->creator; ?></p>
+            <p><?php echo $job->fname;?> <?php echo $job->lname; ?></p>
             <p> <?php echo $job->description; ?></p>
             <p>Type :  <?php echo $job->type; ?></p>
             <p>Max Time :  <?php echo $job->delay; ?> </p>
@@ -84,30 +84,20 @@
 
 <div class="waiting-jobs">
         <div class="content-alljobs-waiting">
+        <?php
+    if (isset($data["requests"])){
+            foreach ($data["requests"] as $request){  
+         ?>
             <div class="posted-job">
-                <p>Mr. abdellah</p>
-                <p>I need bla bla bla bla bla bla bla bla bla<br/>bla bla bla bla bla bla bla bla .</p>
-                <p>Type : Create Logo</p>
-                <p>Max Time : 2 days </p>
-                <p>10$</p>
+                <p><?php echo $request->fname ?> <?php echo $request->lname ?></p>
+                <p><?php echo $request->description ?></p>
+                <p>Type : <?php echo $request->type ?></p>
+                <p>Max Time : <?php echo $request->delay ?> </p>
+                <p><?php echo $request->price ?></p>
                 <p class="see-more"><a href="<?php echo URLROOT; ?>pages/details_job">See More</a></p>
             </div>
-            <div class="posted-job">
-                <p>Mr. abdellah</p>
-                <p>I need bla bla bla bla bla bla bla bla bla<br/>bla bla bla bla bla bla bla bla .</p>
-                <p>Type : Create Logo</p>
-                <p>Max Time : 2 days </p>
-                <p>10$</p>
-                <p class="see-more"><a href="<?php echo URLROOT; ?>pages/details_job">See More</a></p>
-            </div>
-            <div class="posted-job">
-                <p>Mr. abdellah</p>
-                <p>I need bla bla bla bla bla bla bla bla bla<br/>bla bla bla bla bla bla bla bla .</p>
-                <p>Type : Create Logo</p>
-                <p>Max Time : 2 days </p>
-                <p>10$</p>
-                <p class="see-more"><a href="<?php echo URLROOT; ?>pages/details_job">See More</a></p>
-            </div>
+
+            <?php }} ?>
         </div>
 </div>
 </div>

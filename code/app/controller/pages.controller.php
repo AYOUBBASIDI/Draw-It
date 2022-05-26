@@ -97,9 +97,12 @@ class Pages extends controller
         }
     }
     public function designer_dashboard(){
+        $requests = $this->jobModel->getrequests();
         $jobs = $this->jobModel->getAlljobs();
+        
             $data = [
                  'jobs' => $jobs,
+                 'requests' => $requests,
             ];    
                 $this-> view('designer/dashboard' ,$data);
             

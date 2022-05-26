@@ -26,8 +26,8 @@
     <td data-th="lname"><?php echo $item->lname; ?></td>
     <td data-th="email"><?php echo $item->email; ?></td>
     <td data-th="role"><?php echo $item->role; ?></td>
-    <td data-th="situation"></td>
-    <td data-th="operation">att</td>
+    <td data-th="situation"><?php echo $item->situation; ?></td>
+    <td data-th="operation"><a>Delete</a>/<a>Update</a></td>
   </tr>
   <?php }} ?>
 </table>

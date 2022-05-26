@@ -39,9 +39,5 @@ class user extends database
         return $this->db->execute();
     }
  
-    // public function getUsers()
-    // {
-    //     $this->db->query("SELECT * FROM users");
-    //     return $this->db->resultSet();
-    // }
+
 }

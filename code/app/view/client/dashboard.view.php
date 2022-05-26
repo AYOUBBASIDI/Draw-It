@@ -31,7 +31,7 @@
         <div class="rendred">
             <p>Type : <?php echo $job->type; ?></p>
             <p><a href="<?php echo URLROOT; ?>pages/details/<?php echo $job->id; ?>">See Details</a></p>
-            <p><a href="<?php echo URLROOT; ?>pages/requests">15 request</a></p>
+            <p><a href="<?php echo URLROOT; ?>pages/requests/<?php echo $job->id; ?>"><?php echo $job->requests; ?> request</a></p>
             <a><img class="icon-delete" src="<?php echo URLROOT ?>img/delete.png"></a>
         </div>
         <?php }} ?>

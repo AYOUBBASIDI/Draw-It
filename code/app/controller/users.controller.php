@@ -34,7 +34,7 @@ class users extends controller
                             "role" => $_POST["role"],
                         ];
                         if($this->userModel->adduser($data)){
-                        redirect("pages/client_dashboard");
+                        redirect("pages/home");
                     }
         }
     }
@@ -45,7 +45,7 @@ class users extends controller
                                 "fname" => $_POST["fname"],
                                 "lname" => $_POST["lname"],
                                 "email" => $_POST["email"],
-                                "pwd" => $_POST["pwd"],
+                                "pwd" => PASSWORD_HASH($_POST["pwd"], PASSWORD_DEFAULT),
                                 "role" => $_POST["role"],
                             ];
                             if($this->userModel->adduser($data)){
@@ -63,7 +63,7 @@ class users extends controller
                 if($user = $this->userModel->checklogin($data['email'], $data['pwd'])){
                         if ($user)
                         {
-                            var_dump($user);
+                            // var_dump($user);
                             // die($user->id);
                             session_start();
                             $_SESSION['id'] = $user->id;

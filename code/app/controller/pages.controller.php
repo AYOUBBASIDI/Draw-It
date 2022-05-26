@@ -28,13 +28,10 @@ class Pages extends controller
     }
     public function client_dashboard(){
         $jobs = $this->jobModel->getjobs();
-        // echo $jobs->type;
-        if($jobs){
             $data = [
                  'jobs' => $jobs
             ];
         $this->view('client/dashboard', $data);
-        }
     }
     public function client_profile(){
         $user = $this->userModel->getUserById();
@@ -70,8 +67,12 @@ class Pages extends controller
         ];
         $this-> view('client/jobinfo' , $data);
     }
-    public function requests(){
-        $this-> view('client/requests');
+    public function requests($id){
+        $request = $this->jobModel->getRequestsById($id);
+            $data = [
+                 'request' => $request
+            ];
+        $this-> view('client/requests' , $data);
     }
     public function deposit(){
         $this-> view('client/deposit');

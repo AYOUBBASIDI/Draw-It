@@ -19,10 +19,12 @@ class user extends database
         return $this->db->execute();
     }
     public function checklogin($email,$pwd){
-        $this->db->query("SELECT * FROM users WHERE email='" . $email. "' and pwd='" . $pwd . "'");
+        $this->db->query("SELECT * FROM users WHERE email='" . $email. "'");
         $result = $this->db->fetch();
-        return $result;
-        
+        $hashed = $result->pwd;
+        if (password_verify($pwd, $hashed)) {
+            return $result;
+        } 
     }
     public function getUserById(){
         $this->db->query("SELECT * FROM users WHERE id = :id");

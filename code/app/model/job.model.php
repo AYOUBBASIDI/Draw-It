@@ -33,9 +33,16 @@ class job extends database
         $job = $this->db->fetchAll();
         return $job;
     }
+    public function getRequestsById($id){
+        $this->db->query("SELECT requests.*,jobs.price,users.fname,users.lname from requests INNER JOIN jobs on requests.job = jobs.id INNER JOIN users on requests.designer = users.id WHERE job = :id");
+        $this->db->bind(':id', $id);
+        $request = $this->db->fetchAll();
+        return $request;
+    }
     public function getAlljobs()
     {
-        $this->db->query("SELECT jobs.id, jobs.type,jobs.favcolor,jobs.delay,jobs.price,jobs.description,users.fname,users.lname from jobs,users where jobs.id not in ( select job from requests) and jobs.creator=users.id;");
+        $this->db->query("SELECT jobs.id, jobs.type,jobs.favcolor,jobs.delay,jobs.price,jobs.description,users.fname,users.lname from jobs,users where jobs.id not in ( select job from requests where designer = :id) and jobs.creator=users.id;");
+        $this->db->bind(':id', $_SESSION["id"]);
         $jobs = $this->db->fetchAll();
         return $jobs;
     }

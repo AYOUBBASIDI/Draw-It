@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 26, 2022 at 12:22 PM
+-- Generation Time: May 26, 2022 at 10:48 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -28,10 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `accepted` (
-  `id` int(11) NOT NULL,
-  `designer` int(11) NOT NULL,
-  `job` int(11) NOT NULL
+  `id_accepte` int(11) NOT NULL,
+  `designer_accepted` int(11) NOT NULL,
+  `job_accepted` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `accepted`
+--
+
+INSERT INTO `accepted` (`id_accepte`, `designer_accepted`, `job_accepted`) VALUES
+(12, 11, 26),
+(13, 11, 27);
 
 -- --------------------------------------------------------
 
@@ -40,7 +48,7 @@ CREATE TABLE `accepted` (
 --
 
 CREATE TABLE `jobs` (
-  `id` int(11) NOT NULL,
+  `id_job` int(11) NOT NULL,
   `type` varchar(100) NOT NULL,
   `favcolor` varchar(100) NOT NULL,
   `delay` varchar(100) NOT NULL,
@@ -54,15 +62,12 @@ CREATE TABLE `jobs` (
 -- Dumping data for table `jobs`
 --
 
-INSERT INTO `jobs` (`id`, `type`, `favcolor`, `delay`, `price`, `description`, `creator`, `requests`) VALUES
-(8, 'Totam', '#ea9350', '3 day', '18 $', 'Quas dolor est exped', 2, 4),
-(9, 'Consequatur Id eos', '#17462e', 'Tempora voluptas id ', '594', 'Ea harum excepturi d', 2, 1),
-(11, 'Temporibus hic incid', '#875611', 'Perferendis quisquam', '270', 'Sequi voluptatum vol', 2, 1),
-(12, 'Occaecat corrupti n', '#568c4f', 'Consectetur qui rec', '219', 'Autem earum enim rat', 2, 1),
-(13, 'Ullamco in ex dolori', '#444294', 'Atque ab voluptatum ', '144', 'Tenetur sequi perfer', 2, 1),
-(18, 'Vitae in cum ea in e', '#afa1dc', 'Enim omnis sed aut p', '493', 'Eiusmod totam dicta ', 2, 1),
-(19, 'Eos aut officiis nis', '#ecf649', 'Iste cupidatat quasi', '558', 'Et debitis molestiae', 2, 0),
-(20, 'Voluptatum velit cul', '#0aee2b', 'Cupidatat tempora de', '689', 'Aute laborum Volupt', 2, 0);
+INSERT INTO `jobs` (`id_job`, `type`, `favcolor`, `delay`, `price`, `description`, `creator`, `requests`) VALUES
+(24, 'Esse suscipit ex acc', '#446f72', 'Sint tempora ut hic ', '704', 'Fugiat laborum ex e', 9, 2),
+(25, 'Modi iste magnam et ', '#4f4ac8', 'Fugit sint aut assu', '740', 'Iste eum illum veri', 9, 0),
+(26, 'Magni minus esse vit', '#0eb345', 'Cupiditate reprehend', '873', 'Itaque velit modi en', 4, 0),
+(27, 'Aliquam accusantium ', '#485475', 'Fugiat dolor libero ', '703', 'Fuga Praesentium ea', 4, 0),
+(28, 'Adipisci omnis et qu', '#646fb2', 'Dolor numquam simili', '823', 'Vel qui dolor ullam ', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -81,14 +86,24 @@ CREATE TABLE `requests` (
 --
 
 INSERT INTO `requests` (`id`, `job`, `designer`) VALUES
-(1, 8, 3),
-(2, 9, 3),
-(3, 8, 3),
-(4, 8, 3),
-(5, 11, 3),
-(6, 12, 3),
-(7, 13, 3),
-(8, 18, 3);
+(15, 24, 10),
+(17, 24, 11),
+(18, 28, 11);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tests`
+--
+
+CREATE TABLE `tests` (
+  `id_test` int(11) NOT NULL,
+  `title` varchar(100) NOT NULL,
+  `details` varchar(1000) NOT NULL,
+  `slug` varchar(100) NOT NULL,
+  `colors` varchar(100) NOT NULL,
+  `genre` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -97,22 +112,25 @@ INSERT INTO `requests` (`id`, `job`, `designer`) VALUES
 --
 
 CREATE TABLE `users` (
-  `id` int(11) NOT NULL,
+  `id_user` int(11) NOT NULL,
   `fname` varchar(100) NOT NULL,
   `lname` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `pwd` varchar(100) NOT NULL,
-  `role` varchar(100) NOT NULL
+  `role` varchar(100) NOT NULL,
+  `situation` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `pwd`, `role`) VALUES
-(2, 'Kenneth', 'Clinton', 'soqybemy@mailinator.com', 'pop', 'client'),
-(3, 'Wesley', 'Ishmael', 'xasis@mailinator.com', '123', 'designer'),
-(4, 'Sandra', 'Selma', 'camidyve@mailinator.com', '$2y$10$tF2e88iuDi4Dh55cuSIhG.WASUUtmgZBfOmpt2wHjPettrLguvZJe', 'client');
+INSERT INTO `users` (`id_user`, `fname`, `lname`, `email`, `pwd`, `role`, `situation`) VALUES
+(4, 'Sandra', 'Selma', 'camidyve@mailinator.com', '$2y$10$tF2e88iuDi4Dh55cuSIhG.WASUUtmgZBfOmpt2wHjPettrLguvZJe', 'client', ''),
+(9, 'bihi', 'BSD', 'ayoubbsd4@gmail.com', '$2y$10$.d1gsbCtL.EBqq7tS2m07uBbb2f28HawExbpj.2b.QpX4yN4O6EA.', 'client', '1'),
+(10, 'Reed Wilkinson', 'Elmo Pate', 'kofobomati@mailinator.com', '$2y$10$zi/FsvGfD0CvlVkp/dDt5eRKcsLDKgIVUbWiW7A54v1dJ1m557/7.', 'designer', ''),
+(11, 'Isabella Barnett', 'Hector Torres', 'mysyraxev@mailinator.com', '$2y$10$thbcY//9cfg9Olix7X4duuA6rYl/gLPhdzroARRlzI4D2p39SpD/q', 'designer', ''),
+(12, 'Russell', 'Austin', 'tyjo@mailinator.com', '$2y$10$e74toD6XlyNvUI1GlxR86upzP55LnMxkgDgx8k4dBacsjP5svVCc.', 'client', '1');
 
 --
 -- Indexes for dumped tables
@@ -122,15 +140,15 @@ INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `pwd`, `role`) VALUES
 -- Indexes for table `accepted`
 --
 ALTER TABLE `accepted`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `designer` (`designer`),
-  ADD KEY `job` (`job`);
+  ADD PRIMARY KEY (`id_accepte`),
+  ADD KEY `designer` (`designer_accepted`),
+  ADD KEY `job` (`job_accepted`);
 
 --
 -- Indexes for table `jobs`
 --
 ALTER TABLE `jobs`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`id_job`),
   ADD KEY `creator` (`creator`);
 
 --
@@ -142,10 +160,16 @@ ALTER TABLE `requests`
   ADD KEY `job` (`job`);
 
 --
+-- Indexes for table `tests`
+--
+ALTER TABLE `tests`
+  ADD PRIMARY KEY (`id_test`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id_user`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -155,25 +179,31 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `accepted`
 --
 ALTER TABLE `accepted`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_accepte` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `jobs`
 --
 ALTER TABLE `jobs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_job` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `requests`
 --
 ALTER TABLE `requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT for table `tests`
+--
+ALTER TABLE `tests`
+  MODIFY `id_test` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Constraints for dumped tables
@@ -183,21 +213,21 @@ ALTER TABLE `users`
 -- Constraints for table `accepted`
 --
 ALTER TABLE `accepted`
-  ADD CONSTRAINT `accepted_ibfk_1` FOREIGN KEY (`designer`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `accepted_ibfk_2` FOREIGN KEY (`job`) REFERENCES `jobs` (`id`);
+  ADD CONSTRAINT `accepted_ibfk_1` FOREIGN KEY (`designer_accepted`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `accepted_ibfk_2` FOREIGN KEY (`job_accepted`) REFERENCES `jobs` (`id_job`);
 
 --
 -- Constraints for table `jobs`
 --
 ALTER TABLE `jobs`
-  ADD CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`creator`) REFERENCES `users` (`id`);
+  ADD CONSTRAINT `jobs_ibfk_1` FOREIGN KEY (`creator`) REFERENCES `users` (`id_user`);
 
 --
 -- Constraints for table `requests`
 --
 ALTER TABLE `requests`
-  ADD CONSTRAINT `requests_ibfk_1` FOREIGN KEY (`designer`) REFERENCES `users` (`id`),
-  ADD CONSTRAINT `requests_ibfk_2` FOREIGN KEY (`job`) REFERENCES `jobs` (`id`);
+  ADD CONSTRAINT `requests_ibfk_1` FOREIGN KEY (`designer`) REFERENCES `users` (`id_user`),
+  ADD CONSTRAINT `requests_ibfk_2` FOREIGN KEY (`job`) REFERENCES `jobs` (`id_job`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

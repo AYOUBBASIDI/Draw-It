@@ -22,7 +22,7 @@
             <p><?php echo $item->fname; ?> <?php echo $item->lname; ?></p>
             <p>15 job complet</p>
             <p><?php echo $item->price; ?></p>
-            <a><img class="icon-delete" src="<?php echo URLROOT ?>img/take-designer.png"></a>
+            <a href="<?php echo URLROOT; ?>jobs/acceptJob/<?php echo $item->id_user; ?>/<?php echo $item->id_job; ?>/<?php echo $item->id; ?>"><img class="icon-delete" src="<?php echo URLROOT ?>img/take-designer.png" ></a>
         </div>
     </div>
     <?php }} ?>

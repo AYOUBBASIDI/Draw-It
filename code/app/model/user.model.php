@@ -9,7 +9,7 @@ class user extends database
 
     public function adduser($data)
     {
-        $this->db->query("INSERT INTO users (fname,lname,email,pwd,role) VALUES (:fname,:lname,:email,:pwd,:role)");
+        $this->db->query("INSERT INTO users (fname,lname,email,pwd,role,situation) VALUES (:fname,:lname,:email,:pwd,:role,'0')");
         $this->db->bind(":fname", $data["fname"]);
         $this->db->bind(":lname", $data["lname"]);
         $this->db->bind(":email", $data["email"]);
@@ -27,10 +27,16 @@ class user extends database
         } 
     }
     public function getUserById(){
-        $this->db->query("SELECT * FROM users WHERE id = :id");
+        $this->db->query("SELECT * FROM users WHERE id_user = :id");
         $this->db->bind(':id', $_SESSION['id']);
         $user = $this->db->fetchAll();
+        // var_dump($user);
         return $user;
+    }
+    public function notFirstTime(){
+        $this->db->query("UPDATE users SET situation = '1'  WHERE id_user = :id ");
+        $this->db->bind(':id', $_SESSION['id']);
+        return $this->db->execute();
     }
  
     // public function getUsers()

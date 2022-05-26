@@ -35,6 +35,20 @@ class jobs extends controller
         }
     }
 
+    public function acceptJob($user,$job,$request){
+        // echo $request;
+        // die();
+        $data = [
+                            "job_accepted" => $job,
+                            "user_accepted" => $user,
+                            "request" => $request,
+                        ];
+
+                        if($this->jobModel->acceptJob($data)){                          
+                            redirect("pages/client_dashboard");
+                        }
+    }
+
     // public function getjobs()
     // {
     //     if($this->userModel->getjobs()){

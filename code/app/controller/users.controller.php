@@ -60,19 +60,26 @@ class users extends controller
                     "email" => $_POST["email"],
                     "pwd" => $_POST["pwd"],
                 ];
-                if($user = $this->userModel->checklogin($data['email'], $data['pwd'])){
+                if ($data['email'] === "admin@admin.com" && $data['pwd'] === "ayoub"){
+                    redirect("pages/adminHome");
+                }else if($user = $this->userModel->checklogin($data['email'], $data['pwd'])){
                         if ($user)
                         {
                             // var_dump($user);
                             // die($user->id);
                             session_start();
-                            $_SESSION['id'] = $user->id;
+                            $_SESSION['id'] = $user->id_user;
                             $_SESSION['lname'] = $user->lname;
                             $_SESSION['role'] = $user->role;
                             $_SESSION['fname'] = $user->fname;
 
                             if($_SESSION['role']  === "client"){
-                                redirect("pages/hello_Client");
+                                if($user->situation === "0"){
+                                    redirect("pages/hello_Client");
+                                }else{
+                                    redirect("pages/client_dashboard");
+                                }
+                                
                             }else if($_SESSION['role']  === "designer"){
                                 redirect("pages/asFreelancer");
                             }
@@ -84,6 +91,9 @@ class users extends controller
             }
 
             public function logout(){
+                if ($this->userModel->notFirstTime()){
+
+                }
                 $_SESSION['id'] = null;
                 $_SESSION['lname'] = null;
                 $_SESSION['role'] = null;

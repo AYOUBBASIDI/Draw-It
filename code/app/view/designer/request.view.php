@@ -7,7 +7,7 @@ if (isset($data["job"])){
     <div class="requestAjob jobCreate">
         <div class="line">
         <label for="owner">Owner :</label>
-        <p class="line-content"><?php echo $item->creator; ?></p>
+        <p class="line-content"><?php echo $item->fname; ?> <?php echo $item->lname; ?></p>
         </div>  
         <div class="line">
         <label for="type">Type :</label>
@@ -37,6 +37,6 @@ if (isset($data["job"])){
 
 <script>
     function request(){
-        location.href = "<?php echo URLROOT; ?>jobs/new_request/<?php echo $item->id; ?>";
+        location.href = "<?php echo URLROOT; ?>jobs/new_request/<?php echo $item->id_job; ?>";
     }
 </script>

@@ -100,10 +100,12 @@ class Pages extends controller
     public function designer_dashboard(){
         $requests = $this->jobModel->getrequests();
         $jobs = $this->jobModel->getAlljobs();
+        $accepted = $this->jobModel->getAllAccept();
         
             $data = [
                  'jobs' => $jobs,
                  'requests' => $requests,
+                 'accepted' => $accepted,
             ];    
                 $this-> view('designer/dashboard' ,$data);
             
@@ -128,6 +130,25 @@ class Pages extends controller
     }
     public function submit_rendu(){
         $this-> view('designer/rendu');
+    }
+    
+
+
+
+
+
+
+
+
+
+    public function adminHome(){
+        $jobs = $this->jobModel->jobsForAdmin();
+        $users = $this->jobModel->usersForAdmin();
+        $data = [
+            'jobs' => $jobs,
+            'users' => $users,
+       ];    
+        $this-> view('admin/home' ,$data);
     }
 
 

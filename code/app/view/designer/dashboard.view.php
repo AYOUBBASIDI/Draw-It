@@ -20,7 +20,7 @@
             <p>Type :  <?php echo $job->type; ?></p>
             <p>Max Time :  <?php echo $job->delay; ?> </p>
             <p> <?php echo $job->price; ?></p>
-            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job/<?php echo $job->id; ?>">See More</a></p>
+            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job/<?php echo $job->id_job; ?>">See More</a></p>
         </div>
 
     <?php }}?>
@@ -54,29 +54,17 @@
 
 <div class="accepted-jobs">
     <div class="accepted-job-content">
+    <?php
+    if (isset($data["accepted"])){
+            foreach ($data["accepted"] as $item){     
+         ?>
         <div class="job-accept">
-            <p>Mr. Abdellah</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days</p>
+            <p><?php echo $item->fname;?> <?php echo $item->lname; ?></p>
+            <p>Type : <?php echo $item->type;?></p>
+            <p>Max Time : <?php echo $item->delay;?></p>
             <a href="<?php echo URLROOT; ?>pages/submit_rendu"><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
         </div>
-        <div class="job-accept">
-            <p>Mr. Abdellah</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days</p>
-            <a><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png"></a>
-        </div>        
-        <div class="job-accept">
-            <p>Mr. Abdellah</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days</p>
-            <a><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
-        </div>        <div class="job-accept">
-            <p>Mr. Abdellah</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days</p>
-            <a><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png"></a>
-        </div>
+        <?php }} ?>
     </div>
 </div>
 

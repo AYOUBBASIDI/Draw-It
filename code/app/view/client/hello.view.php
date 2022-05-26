@@ -14,7 +14,7 @@
         <img src="<?php echo URLROOT ?>public/img/logo.png" alt="logo" id="logo">
     </nav>
     <div class="hello-content">
-        <p>Thank you for joining <br/>us hopefully you will find <br/> what you want on our <br/> website .</p>
+        <p>Thank you for joining <br/>us hopefully you will find <br/> what you want on our <br/> website . <?php $_SESSION['lname']; ?></p>
         <button class="btn1"><a href="<?php echo URLROOT; ?>pages/client_dashboard">Continue</a></button>
     </div>
 </body>

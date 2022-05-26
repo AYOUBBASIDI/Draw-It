@@ -138,3 +138,18 @@
     font-weight: bold;
     margin-left: 27%;
 }
+
+.pwd-show{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.pwd-hide{
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+}
+.pwd-hide img, .pwd-show img{
+  width:20px;
+  cursor: pointer;
+}

@@ -61,15 +61,18 @@ class users extends controller
                     "pwd" => $_POST["pwd"],
                 ];
                 if($user = $this->userModel->checklogin($data['email'], $data['pwd'])){
-                        if ($user) 
+                        if ($user)
                         {
+                            var_dump($user);
+                            // die($user->id);
                             session_start();
                             $_SESSION['id'] = $user->id;
                             $_SESSION['lname'] = $user->lname;
                             $_SESSION['role'] = $user->role;
+                            $_SESSION['fname'] = $user->fname;
 
                             if($_SESSION['role']  === "client"){
-                                redirect("pages/hello_Client" ,$_SESSION['lname']);
+                                redirect("pages/hello_Client");
                             }else if($_SESSION['role']  === "designer"){
                                 redirect("pages/asFreelancer");
                             }
@@ -81,11 +84,13 @@ class users extends controller
             }
 
             public function logout(){
-
                 $_SESSION['id'] = null;
                 $_SESSION['lname'] = null;
                 $_SESSION['role'] = null;
-                redirect('user/home');
+                // unset($_SESSION['id']);
+                // unset($_SESSION['lname']);
+                // unset($_SESSION['role']);
+                redirect('pages/home');
             }
 
         

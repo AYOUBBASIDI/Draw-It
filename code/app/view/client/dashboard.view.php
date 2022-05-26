@@ -24,18 +24,17 @@
         </div>
     </div>
     <div class="jobs">
+    
+    <?php
+    if (isset($data["jobs"])){
+     foreach ($data["jobs"] as $job){ ?>
         <div class="rendred">
-            <p>Type : Create Logo</p>
-            <p><a href="<?php echo URLROOT; ?>pages/details">See Details</a></p>
+            <p>Type : <?php echo $job->type; ?></p>
+            <p><a href="<?php echo URLROOT; ?>pages/details/<?php echo $job->id; ?>">See Details</a></p>
             <p><a href="<?php echo URLROOT; ?>pages/requests">15 request</a></p>
             <a><img class="icon-delete" src="<?php echo URLROOT ?>img/delete.png"></a>
         </div>
-        <div class="rendred">
-            <p>Type : Create Logo</p>
-            <p><a href="<?php echo URLROOT; ?>pages/details">See Details</a></p>
-            <p><a href="<?php echo URLROOT; ?>pages/requests">15 request</a></p>
-            <a><img class="icon-delete" src="<?php echo URLROOT ?>img/delete.png"></a>
-        </div>
+        <?php }} ?>
 
         <div class="newjob">
             <a href="<?php echo URLROOT; ?>pages/new_job">Add New Job <img src="<?php echo URLROOT ?>img/newjob.png"></a>

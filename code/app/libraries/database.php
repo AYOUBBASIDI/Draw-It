@@ -68,6 +68,7 @@ class database
     {
         $this->stmt->execute();
         $results = $this->stmt->fetchAll(PDO::FETCH_OBJ);
+        // $results = $this->stmt->fetchAll(PDO::FETCH_ASSOC);
         return $results;
     }
 

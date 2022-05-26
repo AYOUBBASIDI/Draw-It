@@ -3,6 +3,8 @@ class Pages extends controller
 {
     public function __construct()
     {
+        $this->userModel = $this->model('user');
+        $this->jobModel = $this->model('job');
     }
     public function index()
     {
@@ -25,13 +27,34 @@ class Pages extends controller
         $this-> view('client/hello');
     }
     public function client_dashboard(){
-        $this-> view('client/dashboard');
+        $jobs = $this->jobModel->getjobs();
+        // echo $jobs->type;
+        if($jobs){
+            $data = [
+                 'jobs' => $jobs
+            ];
+        $this->view('client/dashboard', $data);
+        }
     }
     public function client_profile(){
-        $this-> view('client/profile');
+        $user = $this->userModel->getUserById();
+        if($user){
+            $data = [
+                 'user' => $user
+            ];
+        $this-> view('client/profile' , $data);
+        }else{
+            var_dump($user) ;
+        }
     }
-    public function details(){
-        $this-> view('client/details');
+    public function details($id){
+        $job = $this->jobModel->getJobById($id);
+        if($job){
+            $data = [
+                 'job' => $job
+            ];
+        $this-> view('client/details' , $data);
+        }
     }
     public function new_job(){
         $this-> view('client/newjob');
@@ -63,16 +86,35 @@ class Pages extends controller
         $this-> view('designer/thank_you');
     }
     public function designer_profile(){
-        $this-> view('designer/profile');
+        $user = $this->userModel->getUserById();
+        if($user){
+            $data = [
+                 'user' => $user
+            ];
+        $this-> view('designer/profile' , $data);
+        }else{
+            var_dump($user) ;
+        }
     }
     public function designer_dashboard(){
-        $this-> view('designer/dashboard');
+        $jobs = $this->jobModel->getAlljobs();
+            $data = [
+                 'jobs' => $jobs,
+            ];    
+                $this-> view('designer/dashboard' ,$data);
+            
     }
     public function withdraw(){
         $this-> view('designer/withdraw');
     }
-    public function request_job(){
-        $this-> view('designer/request');
+    public function request_job($id){
+        $job = $this->jobModel->getJobById($id);
+        if($job){
+            $data = [
+                 'job' => $job
+            ];
+        $this-> view('designer/request' , $data);
+        }
     }
     public function details_job(){
         $this-> view('designer/details');
@@ -83,5 +125,6 @@ class Pages extends controller
     public function submit_rendu(){
         $this-> view('designer/rendu');
     }
+
 
 }

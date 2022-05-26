@@ -10,38 +10,20 @@
 <div class="all-job">
     <div class="all-jobs">
     <div class="content-alljobs">
+    <?php
+    if (isset($data["jobs"])){
+            foreach ($data["jobs"] as $job){     
+         ?>
         <div class="posted-job">
-            <p>Mr. abdellah</p>
-            <p>I need bla bla bla bla bla bla bla bla bla<br/>bla bla bla bla bla bla bla bla .</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days </p>
-            <p>10$</p>
-            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job">See More</a></p>
+            <p><?php echo $job->creator; ?></p>
+            <p> <?php echo $job->description; ?></p>
+            <p>Type :  <?php echo $job->type; ?></p>
+            <p>Max Time :  <?php echo $job->delay; ?> </p>
+            <p> <?php echo $job->price; ?></p>
+            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job/<?php echo $job->id; ?>">See More</a></p>
         </div>
-        <div class="posted-job">
-            <p>Mr. abdellah</p>
-            <p>I need bla bla bla bla bla bla bla bla bla<br/>bla bla bla bla bla bla bla bla .</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days </p>
-            <p>10$</p>
-            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job">See More</a></p>
-        </div>
-        <div class="posted-job">
-            <p>Mr. abdellah</p>
-            <p>I need bla bla bla bla bla bla bla bla bla<br/>bla bla bla bla bla bla bla bla .</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days </p>
-            <p>10$</p>
-            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job">See More</a></p>
-        </div>
-        <div class="posted-job">
-            <p>Mr. abdellah</p>
-            <p>I need bla bla bla bla bla bla bla bla bla<br/>bla bla bla bla bla bla bla bla .</p>
-            <p>Type : Create Logo</p>
-            <p>Max Time : 2 days </p>
-            <p>10$</p>
-            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job">See More</a></p>
-        </div>
+
+    <?php }}?>
     </div>
     <div class="filter">
         <h3>Filter search :</h3>
@@ -83,7 +65,8 @@
             <p>Type : Create Logo</p>
             <p>Max Time : 2 days</p>
             <a><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png"></a>
-        </div>        <div class="job-accept">
+        </div>        
+        <div class="job-accept">
             <p>Mr. Abdellah</p>
             <p>Type : Create Logo</p>
             <p>Max Time : 2 days</p>

@@ -22,6 +22,13 @@ class user extends database
         $this->db->query("SELECT * FROM users WHERE email='" . $email. "' and pwd='" . $pwd . "'");
         $result = $this->db->fetch();
         return $result;
+        
+    }
+    public function getUserById(){
+        $this->db->query("SELECT * FROM users WHERE id = :id");
+        $this->db->bind(':id', $_SESSION['id']);
+        $user = $this->db->fetchAll();
+        return $user;
     }
  
     // public function getUsers()

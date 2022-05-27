@@ -7,7 +7,18 @@ class user extends database
         $this->db= new database;
     }
 
-    public function adduser($data)
+    public function addclient($data)
+    {
+        $this->db->query("INSERT INTO users (fname,lname,email,pwd,role,situation) VALUES (:fname,:lname,:email,:pwd,:role,'0')");
+        $this->db->bind(":fname", $data["fname"]);
+        $this->db->bind(":lname", $data["lname"]);
+        $this->db->bind(":email", $data["email"]);
+        $this->db->bind(":pwd", $data["pwd"]);
+        $this->db->bind(":role", $data["role"]);
+        // $this->db->execute();
+        return $this->db->execute();
+    }
+    public function addfreelancer($data)
     {
         $this->db->query("INSERT INTO users (fname,lname,email,pwd,role,situation) VALUES (:fname,:lname,:email,:pwd,:role,'0')");
         $this->db->bind(":fname", $data["fname"]);

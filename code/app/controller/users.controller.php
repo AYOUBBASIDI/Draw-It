@@ -33,7 +33,7 @@ class users extends controller
                             "pwd" => PASSWORD_HASH($_POST["pwd"], PASSWORD_DEFAULT),
                             "role" => $_POST["role"],
                         ];
-                        if($this->userModel->adduser($data)){
+                        if($this->userModel->addclient($data)){
                         redirect("pages/home");
                     }
         }
@@ -48,7 +48,7 @@ class users extends controller
                                 "pwd" => PASSWORD_HASH($_POST["pwd"], PASSWORD_DEFAULT),
                                 "role" => $_POST["role"],
                             ];
-                            if($this->userModel->adduser($data)){
+                            if($this->userModel->addfreelancer($data)){
                             redirect("pages/home", $data);
                         }
             }
@@ -81,19 +81,27 @@ class users extends controller
                                 }
                                 
                             }else if($_SESSION['role']  === "designer"){
+                                if($user->situation === "fr"){
                                 redirect("pages/asFreelancer");
-                            }
+                                }else if($user->situation === "att"){
+                                    redirect("pages/test");
+                            }else if($user->situation === "sub"){
+                                redirect("pages/review");
+                        }else if($user->situation === "yes"){
+                            // redirect("pages/hello_Designer");
+                    }else if($user->situation === "no"){
+                            // redirect("pages/hello_Designer");
+                    }
                         }
                     }else{
                                 redirect("pages/login");
                             }
                 }
             }
+        }
 
             public function logout(){
-                if ($this->userModel->notFirstTime()){
-
-                }
+                if ($this->userModel->notFirstTime()){  
                 $_SESSION['id'] = null;
                 $_SESSION['lname'] = null;
                 $_SESSION['role'] = null;
@@ -102,6 +110,16 @@ class users extends controller
                 // unset($_SESSION['role']);
                 redirect('pages/home');
             }
+        }
+        public function log_out(){
+            $_SESSION['id'] = null;
+                $_SESSION['lname'] = null;
+                $_SESSION['role'] = null;
+                // unset($_SESSION['id']);
+                // unset($_SESSION['lname']);
+                // unset($_SESSION['role']);
+                redirect('pages/home');
+        }
 
         
 

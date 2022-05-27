@@ -5,6 +5,7 @@ class Pages extends controller
     {
         $this->userModel = $this->model('user');
         $this->jobModel = $this->model('job');
+        $this->adminModel = $this->model('admin');
     }
     public function index()
     {
@@ -12,7 +13,6 @@ class Pages extends controller
     }
     public function login()
     {
-        // echo("hello");
         $this-> view('pages/login');
     }
     public function signup()
@@ -81,7 +81,11 @@ class Pages extends controller
         $this-> view('designer/hello');
     }
     public function test(){
-        $this-> view('designer/test');
+        $test = $this->adminModel->getRandomTest();
+        $data = [
+            'test' => $test
+        ];
+        $this-> view('designer/test', $data);
     }
     public function thank(){
         $this-> view('designer/thank_you');
@@ -130,6 +134,12 @@ class Pages extends controller
     }
     public function submit_rendu(){
         $this-> view('designer/rendu');
+    }
+    public function accepted(){
+        $this-> view('designer/accepted');
+    }
+    public function rejected(){
+        $this-> view('designer/rejected');
     }
     
 

@@ -56,6 +56,7 @@ class users extends controller
 
         public function login(){
             if(isset($_POST["login"] )){
+                // echo "login1";
                 $data = [
                     "email" => $_POST["email"],
                     "pwd" => $_POST["pwd"],
@@ -81,22 +82,26 @@ class users extends controller
                                 }
                                 
                             }else if($_SESSION['role']  === "designer"){
+                                echo "login3";
                                 if($user->situation === "fr"){
+                                    echo "login4";
                                 redirect("pages/asFreelancer");
                                 }else if($user->situation === "att"){
                                     redirect("pages/test");
-                            }else if($user->situation === "sub"){
-                                redirect("pages/review");
-                        }else if($user->situation === "yes"){
-                            // redirect("pages/hello_Designer");
-                    }else if($user->situation === "no"){
-                            // redirect("pages/hello_Designer");
+                                }else if($user->situation === "sub"){
+                                    redirect("pages/review");
+                                }else if($user->situation === "yes"){
+                                    redirect("pages/accepted");
+                                }else if($user->situation === "no"){
+                                        redirect("pages/rejected");
+                                }else if($user->situation === "1"){
+                                    redirect("pages/designer_dashboard");
+                                }
+                            }
                     }
-                        }
-                    }else{
+                }else{
                                 redirect("pages/login");
                             }
-                }
             }
         }
 
@@ -111,14 +116,35 @@ class users extends controller
                 redirect('pages/home');
             }
         }
+        // public function log_out(){
+        //     if ($this->userModel->FirstLogOut()){  
+        //     $_SESSION['id'] = null;
+        //         $_SESSION['lname'] = null;
+        //         $_SESSION['role'] = null;
+        //         // unset($_SESSION['id']);
+        //         // unset($_SESSION['lname']);
+        //         // unset($_SESSION['role']);
+        //         redirect('pages/home');
+        //     }
+        // }
+
+        public function test(){
+            // echo "im here";
+            // die();
+            if ($this->userModel->fortest()){
+                redirect('pages/test');
+            }
+        }
         public function log_out(){
             $_SESSION['id'] = null;
-                $_SESSION['lname'] = null;
-                $_SESSION['role'] = null;
-                // unset($_SESSION['id']);
-                // unset($_SESSION['lname']);
-                // unset($_SESSION['role']);
-                redirect('pages/home');
+            $_SESSION['lname'] = null;
+            $_SESSION['role'] = null;
+            redirect('pages/home');
+        }
+        public function review(){
+            if ($this->userModel->review()){
+                redirect('pages/review');
+            }
         }
 
         

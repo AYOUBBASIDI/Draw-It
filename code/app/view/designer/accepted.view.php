@@ -16,7 +16,7 @@
     <div class="hello-content">
         <p>congratulations,<br/>You passed the exam,<br/>Now you can work with us.<br/>Welcome .</p>
         <button class="btn2"><a href="<?php echo URLROOT; ?>user/log_out">Log Out</a></button>
-        <button class="btn1"><a href="<?php echo URLROOT; ?>pages/designer_profile">Continue</a></button>
+        <button class="btn1"><a href="<?php echo URLROOT; ?>pages/designer_dashboard">Continue</a></button>
     </div>
 </body>
 <script>

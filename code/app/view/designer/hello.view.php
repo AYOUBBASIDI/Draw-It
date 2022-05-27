@@ -15,8 +15,8 @@
     </nav>
     <div class="hello-content">
         <p>We will offer you a <br/>small job without payment <br/>to assess your design <br/>skills .</p>
-        <button class="btn1"><a href="<?php echo URLROOT; ?>pages/test">Continue</a></button>
-        <button class="btn2"><a href="<?php echo URLROOT; ?>pages/home">Cancel</a></button>
+        <button class="btn1"><a href="<?php echo URLROOT; ?>users/test">Continue</a></button>
+        <button class="btn2"><a href="<?php echo URLROOT; ?>users/log_out">Cancel</a></button>
     </div>
 </body>
 <script>

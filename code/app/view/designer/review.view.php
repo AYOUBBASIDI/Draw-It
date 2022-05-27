@@ -15,7 +15,7 @@
     </nav>
     <div class="hello-content">
         <p>Thank you for passing <br/>the exam. We'll review your <br/>work and respond soon.<br/>Stay informed ..</p>
-        <button class="btn2"><a href="<?php echo URLROOT; ?>pages/designer_profile">Log Out</a></button>
+        <button class="btn2"><a href="<?php echo URLROOT; ?>users/log_out">Log Out</a></button>
     </div>
 </body>
 <script>

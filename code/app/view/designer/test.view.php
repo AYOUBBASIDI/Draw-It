@@ -20,28 +20,33 @@
         <div class="btn-rendered" onclick="switchpart('rendred')"><p>rendered</p></div>
     </div>
     <div class="description">
+        <?php
+    if (isset($data["test"])){
+            foreach ($data["test"] as $item){     
+         ?>
         <div class="part1">
             <div>
                 <div>
                     <label for="title">Title :</label>
-                    <p>Design a logo for a company</p>
+                    <p><?php echo $item->title_test;?></p>
                 </div>
                 <div>
                     <label for="description">Details :</label>
-                    <p>A computer company wants you to create a logo for it, that's<br/>some details about it .</p>
+                    <p><?php echo $item->description;?></p>
                 </div>
                 <ul>
-                    <li>Name : Orange </li>
-                    <li>Color prefere : (#ff7800) Orange - (#00ff0c) Green</li>
-                    <li>Genre : technical</li>
+                    <li>Slug : <?php echo $item->slug_test;?> </li>
+                    <li>Color prefere : <?php echo $item->color_test;?></li>
+                    <li>Genre : <?php echo $item->genre_test;?></li>
                 </ul>
                 <div class="btn-operation">    
-                    <button class="log-out"><a href="<?php echo URLROOT; ?>pages/home">Log Out</a></button>
-                    <button class="change-test"><a href="<?php echo URLROOT; ?>pages/test">Change Test</a></button>
+                    <button class="log-out-single"><a href="<?php echo URLROOT; ?>users/log_out">Log Out</a></button>
                 </div> 
             </div>
         </div>
+<?php }} ?>
         <div class="part2" style="display:none;">
+        <form action="<?php echo URLROOT; ?>admins/submit_test" method="post">
         <div class="for-rendu">
             <h2>Add rendering</h2>
             <div class="rendu-content">
@@ -56,11 +61,13 @@
                 </div>
             </div>
                 <div class="btn-operation">    
-                    <button class="log-out"><a href="<?php echo URLROOT; ?>pages/home">Log Out</a></button>
-                    <button class="change-test"><a href="<?php echo URLROOT; ?>pages/review">Submit</a></button>
+                    <button class="log-out"><a href="<?php echo URLROOT; ?>users/log_out">Log Out</a></button>
+                    <button class="change-test" type="submit" name="test_submit"><a>Submit</a></button>
                 </div>
             
+            
         </div>
+        </form>
         </div>
         
     </div>

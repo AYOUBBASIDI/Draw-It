@@ -28,7 +28,7 @@
                     <p class="row-menu"><img src="<?php echo URLROOT ?>public/img/profile-menu.png"><a href="<?php echo URLROOT; ?>pages/designer_profile">Profile</a></p>
                     <p class="row-menu"><img src="<?php echo URLROOT ?>public/img/dash-menu.png"><a href="<?php echo URLROOT; ?>pages/designer_dashboard">Dashboard</a></p>
                     <p class="row-menu"><img src="<?php echo URLROOT ?>public/img/depo.png"><a href="<?php echo URLROOT; ?>pages/withdraw">Withdraw</a></p>
-                    <p class="row-menu"><img src="<?php echo URLROOT ?>public/img/logout.png"><a  href="<?php echo URLROOT; ?>users/log_out ">Log Out</a></p>
+                    <p class="row-menu"><img src="<?php echo URLROOT ?>public/img/logout.png"><a  href="<?php echo URLROOT; ?>users/logout ">Log Out</a></p>
                     <p class="footer"><a>drawsupport@gmail.com</a><a>Copyright©Draw_it</a></p>
                   </div>
     </nav>

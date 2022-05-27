@@ -13,8 +13,8 @@
     <nav>
         <img src="<?php echo URLROOT ?>public/img/logo.png" alt="logo" id="logo">
     </nav>
-    <div class="hello-content">
-        <p>Unfortunately,<br/>After looking at<br/>your work, you<br/>didn't pass<br/>this exam.<br/>Develop your skills<br/>and<br/>come back to us.<br/>We're waiting .</p>
+    <div class="hello-content" style="margin-top:-3%;">
+        <p>Unfortunately,<br/>After looking at<br/>your work, you didn't pass<br/>this exam. Develop your skills<br/>and come back to us.<br/>We're waiting .</p>
         <button class="btn2"><a href="<?php echo URLROOT; ?>user/log_out">Cancel</a></button>
     </div>
 </body>

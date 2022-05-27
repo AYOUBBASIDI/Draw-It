@@ -83,7 +83,19 @@
     color: #F3A1FF;
     cursor: pointer;
   }
-  .log-out a{
+  .log-out-single{
+    border: solid 2px #F3A1FF;
+    font-family: "Itim", cursive;
+    border-radius: 20px;
+    width: 16%;
+    height: 35px;
+    background: none;
+    margin-left: 54%;
+    margin-top: 2%;
+    color: #F3A1FF;
+    cursor: pointer;
+  }
+  .log-out a, .log-out-single a{
     text-decoration: none;
     color:#F3A1FF;
   }

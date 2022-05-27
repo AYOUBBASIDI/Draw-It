@@ -20,7 +20,7 @@ class user extends database
     }
     public function addfreelancer($data)
     {
-        $this->db->query("INSERT INTO users (fname,lname,email,pwd,role,situation) VALUES (:fname,:lname,:email,:pwd,:role,'0')");
+        $this->db->query("INSERT INTO users (fname,lname,email,pwd,role,situation) VALUES (:fname,:lname,:email,:pwd,:role,'fr')");
         $this->db->bind(":fname", $data["fname"]);
         $this->db->bind(":lname", $data["lname"]);
         $this->db->bind(":email", $data["email"]);
@@ -31,11 +31,12 @@ class user extends database
     }
     public function checklogin($email,$pwd){
         $this->db->query("SELECT * FROM users WHERE email='" . $email. "'");
-        $result = $this->db->fetch();
-        $hashed = $result->pwd;
+        $user = $this->db->fetch();
+        $hashed = $user->pwd;
         if (password_verify($pwd, $hashed)) {
-            return $result;
-        } 
+            return $user;
+        }
+        
     }
     public function getUserById(){
         $this->db->query("SELECT * FROM users WHERE id_user = :id");
@@ -46,6 +47,21 @@ class user extends database
     }
     public function notFirstTime(){
         $this->db->query("UPDATE users SET situation = '1'  WHERE id_user = :id ");
+        $this->db->bind(':id', $_SESSION['id']);
+        return $this->db->execute();
+    }
+    // public function FirstLogOut(){
+    //     $this->db->query("UPDATE users SET situation = '1'  WHERE id_user = :id ");
+    //     $this->db->bind(':id', $_SESSION['id']);
+    //     return $this->db->execute();
+    // }
+    public function fortest(){
+        $this->db->query("UPDATE users SET situation = 'att'  WHERE id_user = :id ");
+        $this->db->bind(':id', $_SESSION['id']);
+        return $this->db->execute();
+    }
+    public function review(){
+        $this->db->query("UPDATE users SET situation = 'sub'  WHERE id_user = :id ");
         $this->db->bind(':id', $_SESSION['id']);
         return $this->db->execute();
     }

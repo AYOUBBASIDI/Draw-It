@@ -62,7 +62,7 @@
             <p><?php echo $item->fname;?> <?php echo $item->lname; ?></p>
             <p>Type : <?php echo $item->type;?></p>
             <p>Max Time : <?php echo $item->delay;?></p>
-            <a href="<?php echo URLROOT; ?>pages/submit_rendu"><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
+            <a href="<?php echo URLROOT; ?>pages/submit_rendu/<?php echo $item->id_job;?>"><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
         </div>
         <?php }} ?>
     </div>

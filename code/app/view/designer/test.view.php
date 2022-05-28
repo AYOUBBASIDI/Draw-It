@@ -46,7 +46,7 @@
         </div>
 <?php }} ?>
         <div class="part2" style="display:none;">
-        <form action="<?php echo URLROOT; ?>admins/submit_test" method="post">
+        <form enctype="multipart/form-data" action="<?php echo URLROOT; ?>admins/submit_test" method="post">
         <div class="for-rendu">
             <h2>Add rendering</h2>
             <div class="rendu-content">

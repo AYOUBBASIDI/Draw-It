@@ -6,22 +6,18 @@
         <button class="jobs-menu-btn" type="submit" onclick="action('job')"><a>Posted jobs</a></button>
     </div>
     <div class="all-rendred">
+    <?php
+    if (isset($data["rendu"])){
+     foreach ($data["rendu"] as $rendu){ ?>
         <div class="rendred">
-            <p>Ayoub Basidi</p>
-            <p>Type : Create Logo</p>
-            <p><a href="<?php echo URLROOT; ?>pages/details">See Details</a></p>
-            <a><img class="icon-download" src="<?php echo URLROOT ?>img/download.png"></a>
-            <a><img class="icon-accept" src="<?php echo URLROOT ?>img/accept.png"></a>
+            <p><?php echo $rendu->fname; ?> <?php echo $rendu->lname; ?></p>
+            <p>Type :  <?php echo $rendu->type; ?></p>
+            <p><a href="<?php echo URLROOT; ?>pages/details/<?php echo $rendu->rendu_for; ?>">See Details</a></p>
+            <a href="<?php echo URLROOT; ?>users/uploadfile/<?php echo $rendu->rendu_client; ?>"><img class="icon-download" src="<?php echo URLROOT ?>img/download.png"></a>
+            <a href="<?php echo URLROOT; ?>users/goodjob/<?php echo $rendu->id_job; ?>/<?php echo $rendu->id_user; ?>"><img class="icon-accept" src="<?php echo URLROOT ?>img/accept.png"></a>
             <a><img class="icon-denied" src="<?php echo URLROOT ?>img/denied.png"></a>
         </div>
-        <div class="rendred">
-            <p>Ayoub Basidi</p>
-            <p>Type : Create Logo</p>
-            <p><a href="<?php echo URLROOT; ?>pages/details">See Details</a></p>
-            <a><img class="icon-download" src="<?php echo URLROOT ?>img/download.png"></a>
-            <a><img class="icon-accept" src="<?php echo URLROOT ?>img/accept.png"></a>
-            <a><img class="icon-denied" src="<?php echo URLROOT ?>img/denied.png"></a>
-        </div>
+    <?php }} ?>
     </div>
     <div class="jobs">
     

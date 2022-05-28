@@ -17,7 +17,7 @@
     <th>E-mail</th>
     <th>Role</th>
     <th>Situation</th>
-    <th>Operation</th>
+    <th>To Delete</th>
     <th>Test</th>
   </tr>
   <?php
@@ -29,13 +29,18 @@
     <td data-th="email"><?php echo $item->email; ?></td>
     <td data-th="role"><?php echo $item->role; ?></td>
     <td data-th="situation"><?php echo $item->situation; ?></td>
-    <td data-th="operation"><a>Delete</a>/<a>Update</a></td>
+    <td data-th="operation"><a class="delete" href="<?php echo URLROOT; ?>admins/delete_user/<?php echo $item->id_user; ?>">Delete</a></a></td>
     <td data-th="test">
       <?php if($item->situation === 'sub'){ ?>
-      <button><a>Accept</a></button>
-      <button><a>Reject</a></button>
-      <?php }else{  ?>
+        <p>Rendred is send</p>
+      <?php }else if($item->situation === 'att' || $item->situation === 'fr'){  ?>
         <p>Waiting for rendred</p>
+        <?php }else if($item->situation === 'yes'){  ?>
+        <p>Designer is accepted</p>
+        <?php }else if($item->situation === 'no'){  ?>
+        <p>Designer is rejected</p>
+        <?php }else{  ?>
+        <p>Nothing to say</p>
       <?php } ?>
     </td>
   </tr>
@@ -63,3 +68,26 @@
 
 <hr/>
 <hr/>
+
+
+
+<h2>rendred</h2>
+<div class="all-rendred">
+<?php
+    if (isset($data["rendu"])){
+     foreach ($data["rendu"] as $item){ ?>
+<div class="cart">
+  <h4>designer name :</h4>
+  <p><?php echo $item->fname; ?><?php echo $item->lname; ?></p>
+  <h4>Messsage :</h4>
+  <p><?php echo $item->message; ?></p>
+  <h4>rendred</h4>
+  <a href="<?php echo URLROOT; ?>admins/upload/<?php echo $item->rendu;?>">Click here to upload it</a>
+  <h4>Test Result</h4>
+  <button class="accept"><a href="<?php echo URLROOT; ?>admins/accept_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Accept</a></button>
+  <button class="reject"><a href="<?php echo URLROOT; ?>admins/reject_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Reject</a></button>
+</div>
+
+<?php }} ?>
+</div>
+

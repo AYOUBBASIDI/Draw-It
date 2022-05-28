@@ -28,8 +28,10 @@ class Pages extends controller
     }
     public function client_dashboard(){
         $jobs = $this->jobModel->getjobs();
+        $rendu = $this->jobModel->getrendus();
             $data = [
-                 'jobs' => $jobs
+                 'jobs' => $jobs,
+                 'rendu' => $rendu,
             ];
         $this->view('client/dashboard', $data);
     }
@@ -132,8 +134,14 @@ class Pages extends controller
     public function review(){
         $this-> view('designer/review');
     }
-    public function submit_rendu(){
-        $this-> view('designer/rendu');
+    public function submit_rendu($id){
+        $job = $this->jobModel->getJobById($id);
+        if($job){
+            $data = [
+                 'job' => $job
+            ];
+        $this-> view('designer/rendu', $data);
+        }
     }
     public function accepted(){
         $this-> view('designer/accepted');
@@ -154,9 +162,11 @@ class Pages extends controller
     public function adminHome(){
         $jobs = $this->jobModel->jobsForAdmin();
         $users = $this->jobModel->usersForAdmin();
+        $rendu = $this->adminModel->rendredForAdmin();
         $data = [
             'jobs' => $jobs,
             'users' => $users,
+            'rendu' => $rendu,
        ];    
         $this-> view('admin/home' ,$data);
     }

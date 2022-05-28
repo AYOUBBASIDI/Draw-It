@@ -79,4 +79,51 @@
  .rwd-table th, .rwd-table td:before {
 	 color: #dd5;
 }
- 
+.cart{
+	border: solid 2px;
+    border-radius: 15px;
+    padding: 10px;
+    width: 25%;
+}
+.all-rendred{
+	display: flex;
+    justify-content: space-evenly;
+}
+.accept{
+	border: none;
+    background: radial-gradient(green, transparent);
+    width: 30%;
+    height: 20px;
+}
+.reject{
+	border: none;
+    background: radial-gradient(red, transparent);
+    width: 30%;
+    height: 20px;
+}
+form input{
+	border: solid;
+    border-radius: 5px;
+    width: 20%;
+    height: 23px;
+    background: none;
+}
+form textarea{
+	border: solid;
+    border-radius: 5px;
+    max-width: 20%;
+    max-height: 80px;
+    background: none;
+    width: 358px;
+    height: 128px;
+    min-width: 20%;
+    min-height: 80px;
+}
+.delete{
+	text-decoration:none;
+	color:white;
+}
+.delete:hover{
+	text-decoration:underline;
+	color:red;
+}

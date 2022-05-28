@@ -147,6 +147,43 @@ class users extends controller
             }
         }
 
+        public function uploadfile($name)
+        {
+            if(!empty($name))
+        {
+            $filename = basename($name);
+            $filepath = '../public/local_images/' . $filename;
+            if (!empty($filename) && file_exists($filepath)){
+                if (!empty($filename) && file_exists($filepath)){
+                    header('Content-Description: File Transfer');
+                    header('Content-Type: application/pdf');
+                    header("Cache-Control: no-cache, must-revalidate");
+                    header("Expires: 0");
+                    header('Content-Disposition: attachment; filename="'.basename($filename).'"');
+                    header('Content-Length: ' . filesize($filename));
+                    header('Pragma: public');
+                    readfile($filepath);
+                    exit;
+                }
+            }
+            else{
+                echo "this file does not exist";
+            }
+        }
+        }
+
+        public function goodjob($id_job,$id_user)
+        {
+            $data = [
+                "type" => $_POST["type"],
+                "favcolor" => $_POST["favcolor"],
+            ];
+
+            if($this->jobModel->addjob($data)){
+                redirect("pages/client_dashboard", $data);
+            }
+        }
+
         
 
 }

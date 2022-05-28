@@ -105,6 +105,22 @@ class job extends database
         $users = $this->db->fetchAll();
         return $users;
     }
+    public function new_rendu($data)
+    {
+        $this->db->query("INSERT INTO rendu_client (message_rendu,rendu_for,rendu_client,designer_rendu) VALUES (:message,:job_id,:rendu,:designer)");
+        $this->db->bind(":message", $data["message"]);
+        $this->db->bind(":job_id", $data["id_job"]);
+        $this->db->bind(":rendu", $data["rendu"]);
+        $this->db->bind(":designer", $_SESSION["id"]);
+        return $this->db->execute();
+    }
+    public function getrendus()
+    {
+        $this->db->query("SELECT rendu_client.*,jobs.id_job,jobs.type,jobs.delay,jobs.price,jobs.description,jobs.favcolor,users.id_user,users.fname,users.lname from rendu_client INNER JOIN jobs on rendu_client.rendu_for = jobs.id_job INNER JOIN users on rendu_client.designer_rendu = users.id_user WHERE jobs.creator = :id;");
+        $this->db->bind(":id", $_SESSION["id"]);
+        $rendu = $this->db->fetchAll();
+        return $rendu;
+    } 
 
 
 }

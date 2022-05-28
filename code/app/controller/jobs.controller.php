@@ -55,6 +55,26 @@ class jobs extends controller
     //         redirect("pages/client_dashboard");
     //     }
     // }
+    public function new_rendu()
+    {
+        if(isset($_POST["rendu_client"] )){
+            $name_file = $_FILES['rendu']['name'];
+            $tmp_name = $_FILES['rendu']['tmp_name'];
+            $local_image = '../public/local_images/';
+            $upload = move_uploaded_file($tmp_name,$local_image.$name_file);
+            if($upload){
+            $data = [
+                            "rendu" => $name_file,
+                            "id_job" => $_POST["id_job"],
+                            "message" => $_POST["message"],
+                        ];
+
+                        if($this->jobModel->new_rendu($data)){
+                            redirect("pages/designer_dashboard");
+                        }
+            }
+        }
+    }
 
 }
 

@@ -25,9 +25,10 @@
             <div class="single-jobs">
             <?php 
             if (isset($data["job_complete"])){
-            foreach ($data["job_complete"] as $item ){  ?>
+            $i=1;
+            foreach ($data["job_complete"] as $item){  ?>
                 <div class="job">
-                    <p>#1</p>
+                    <p># <?php echo $i++;  ?></p>
                     <p><?php echo $item->type; ?></p>
                     <p><?php echo $item->price; ?> $</p>
                 </div>

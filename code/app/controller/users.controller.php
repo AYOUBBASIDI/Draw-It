@@ -4,6 +4,7 @@ class users extends controller
 {
     public function __construct()
     {
+        $this->jobModel = $this->model('job');
         $this->userModel = $this->model('user');
     }
     // public function index()
@@ -172,15 +173,16 @@ class users extends controller
         }
         }
 
-        public function goodjob($id_job,$id_user)
+        public function goodjob($id_job,$id_user,$price)
         {
             $data = [
-                "type" => $_POST["type"],
-                "favcolor" => $_POST["favcolor"],
+                "id_job" => $id_job,
+                "id_user" => $id_user,
+                "price" => $price,
             ];
 
-            if($this->jobModel->addjob($data)){
-                redirect("pages/client_dashboard", $data);
+            if($this->jobModel->goodjob($data)){
+                redirect("pages/client_dashboard");
             }
         }
 

@@ -212,13 +212,13 @@ nav{
     display: none;
 }
 .content-alljobs{
-    width: 69%;
+    width: 96%;
     height: 424px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 0px 2%;
     overflow: auto;
 }
@@ -232,7 +232,7 @@ nav{
 .posted-job{
     border: solid 2px;
     padding: 0 10px;
-    width: 43%;
+    width: 30%;
     position: relative;
     color: white;
     font-family: "Itim", cursive;
@@ -320,17 +320,17 @@ option:hover{
     margin-top: 2%;
 }
 .content-alljobs-waiting{
-    width: 70%;
+    /*width: 70%; */
     height: 424px;
     display: flex;
     flex-direction: row;
-    align-items: flex-start;
     flex-wrap: wrap;
     justify-content: space-between;
     padding: 0px 2%;
     overflow: auto;
-    margin-left: 15%;
+    /* margin-left: 15%; */
     margin-top: 1%;
+    align-items: flex-start;
 }
 .requestAjob{
     margin-top: 3% !important;
@@ -343,4 +343,44 @@ option:hover{
     text-decoration: underline;
     text-decoration-color: #ffffff;
 }
+.job-accept .first-row ,.row{
+    width:20%;
+  }
+  .job-accept .second-row{
+    width:25%;
+  }
+  .first-line{
+    width:23%;
+  }
+  .second-line{
+    width:20%;
+  }
+  .third-line{
+    width:10%;
+  }
+  .line-icon{
+      width:5%;
+  }
+
+  @media only screen and (max-width: 600px) {
+      .posted-job{
+        width: 92%;
+      }
+      .dashborad-menu-client{
+        width: 92%;
+      }
+      .content-alljobs {
+        height: 655px;
+      }
+      .dashborad-menu-client {
+        margin-top: 8%;
+      }
+      .all-jobs{
+        margin-top: 8%;
+      }
+
+      .txt-btn{
+          font-size:13px;
+      }
+  }
 

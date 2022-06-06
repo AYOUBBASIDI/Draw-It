@@ -23,7 +23,7 @@
         </div>  
         <div class="line">
         <label for="Price">Price :</label>
-        <p class="line-content"><?php echo $data["price"]; ?></p>
+        <p class="line-content"><?php echo $data["price"]; ?> $</p>
         <button class="cancel-job">Cancel</button>
         </div>  
         <div class="div-form-hidden">

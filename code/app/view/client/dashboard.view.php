@@ -10,12 +10,12 @@
     if (isset($data["rendu"])){
      foreach ($data["rendu"] as $rendu){ ?>
         <div class="rendred">
-            <p><?php echo $rendu->fname; ?> <?php echo $rendu->lname; ?></p>
-            <p>Type :  <?php echo $rendu->type; ?></p>
-            <p><a href="<?php echo URLROOT; ?>pages/details/<?php echo $rendu->rendu_for; ?>">See Details</a></p>
-            <a href="<?php echo URLROOT; ?>users/uploadfile/<?php echo $rendu->rendu_client; ?>"><img class="icon-download" src="<?php echo URLROOT ?>img/download.png"></a>
-            <a href="<?php echo URLROOT; ?>users/goodjob/<?php echo $rendu->id_job; ?>/<?php echo $rendu->id_user; ?>"><img class="icon-accept" src="<?php echo URLROOT ?>img/accept.png"></a>
-            <a><img class="icon-denied" src="<?php echo URLROOT ?>img/denied.png"></a>
+            <p class="first-line"><?php echo $rendu->fname; ?> <?php echo $rendu->lname; ?></p>
+            <p class="second-line">Type :  <?php echo $rendu->type; ?></p>
+            <p class="third-line"><a href="<?php echo URLROOT; ?>pages/details/<?php echo $rendu->rendu_for; ?>">See Details</a></p>
+            <a class="line-icon" href="<?php echo URLROOT; ?>users/uploadfile/<?php echo $rendu->rendu_client; ?>"><img class="icon-download" src="<?php echo URLROOT ?>img/download.png"></a>
+            <a class="line-icon" href="<?php echo URLROOT; ?>users/goodjob/<?php echo $rendu->id_job; ?>/<?php echo $rendu->id_user; ?>/<?php echo $rendu->price; ?>"><img class="icon-accept" src="<?php echo URLROOT ?>img/accept.png"></a>
+            <a ><img class="icon-denied" src="<?php echo URLROOT ?>img/denied.png"></a>
         </div>
     <?php }} ?>
     </div>
@@ -25,9 +25,9 @@
     if (isset($data["jobs"])){
      foreach ($data["jobs"] as $job){ ?>
         <div class="rendred">
-            <p>Type : <?php echo $job->type; ?></p>
-            <p><a href="<?php echo URLROOT; ?>pages/details/<?php echo $job->id_job; ?>">See Details</a></p>
-            <p><a href="<?php echo URLROOT; ?>pages/requests/<?php echo $job->id_job; ?>"><?php echo $job->requests; ?> request</a></p>
+            <p class="row">Type : <?php echo $job->type; ?></p>
+            <p class="row"><a href="<?php echo URLROOT; ?>pages/details/<?php echo $job->id_job; ?>">See Details</a></p>
+            <p class="row"><a href="<?php echo URLROOT; ?>pages/requests/<?php echo $job->id_job; ?>"><?php echo $job->requests; ?> request</a></p>
             <a><img class="icon-delete" src="<?php echo URLROOT ?>img/delete.png"></a>
         </div>
         <?php }} ?>

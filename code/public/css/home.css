@@ -299,3 +299,50 @@
     margin-left: 3.5%;
   }
   /*# sourceMappingURL=style.css.map */
+
+  @media only screen and (max-width: 600px) {
+    .homePage{
+      height: 99vh;
+    }
+    nav div {
+      width: 45%;
+    }
+    nav img {
+      width: 26% !important;
+      margin-top: 4% !important;
+    }
+    .content h1{
+      margin-top: 30%;
+      font-size: 37px;
+    }
+    content p{
+      font-size: 15px;
+    }
+    .btn1{
+      width: 40%;
+      margin-top: 6%;
+    }
+    .btn2{
+      width: 40%;
+    }
+    footer {
+      width: 58% !important;
+      text-align: -webkit-right;
+      margin-left: 20%;
+      margin-top: 15%;
+    }
+    .content{
+      text-align: center;
+      margin-left: 7%;
+      width: 100%;
+    }
+    .popUp1 form p , .popUp2 form p{
+      MARGIN-TOP: 1%;
+      font-size: 9px;
+    }
+    .popUp1 , .popUp2{
+      top: 17%;
+      width: 92%;
+      margin-left: 0%;
+    }
+  }

@@ -28,7 +28,7 @@
         </div>  
         <div class="line">
         <label for="Price">Price :</label>
-        <p class="line-content"><?php echo $item->price; ?></p>
+        <p class="line-content"><?php echo $item->price; ?> $</p>
         </div>   
         <?php }}?>
     </div>

@@ -1,19 +1,17 @@
 <?php include APPROOT . '/view/include-designer/header.php'; ?>
 
 <div class="profile-content">
-<div class="info-profile">
-        <h3>Personal Information :</h3>
-        <?php 
+    <?php 
             if (isset($data["user"])){
             foreach ($data["user"] as $info){ ?>
+<div class="info-profile">
+        <h3>Personal Information :</h3>
+        
         <div class="info">
             <div><p><?php echo $info->fname;?>&nbsp;<?php echo $info->lname; ?></p></div>
             <div><p><?php echo $info->email; ?></p></div>
-            <div class="pwd-hide"><p>*************</p><a onclick="showPwd()"><img src="<?php echo URLROOT ?>img/vue.png"></a></div>
-            <div class="pwd-show" style="display:none;"><p><?php echo $info->pwd; ?></p><a onclick="hidePwd()"><img src="<?php echo URLROOT ?>img/cacher.png"></a></div>
             <div><p>Add a number phone</p></div>
-        </div>
-        <?php }} ?>
+        </div>     
         <button class="update-info">Update Profile</button>
     </div>
     <div class = "vertical"></div>
@@ -21,40 +19,25 @@
     <h3>Your Jobs :</h3>
         <div class="all-jobs-profile">
             <div class="head-jobs">
-                <p>15 Job Completed</p>
-                <p>Money Earned : 135 $</p>
+                <p><?php echo $info->num_job_complet; ?> Job Completed</p>
+                <p>Money Earned : <?php echo $info->wallet; ?> $</p>
             </div>
             <div class="single-jobs">
+            <?php 
+            if (isset($data["job_complete"])){
+            foreach ($data["job_complete"] as $item ){  ?>
                 <div class="job">
                     <p>#1</p>
-                    <p>Create a Logo</p>
-                    <p>10$</p>
+                    <p><?php echo $item->type; ?></p>
+                    <p><?php echo $item->price; ?> $</p>
                 </div>
-                <div class="job">
-                    <p>#1</p>
-                    <p>Create a Logo</p>
-                    <p>10$</p>
-                </div>
-                <div class="job">
-                    <p>#1</p>
-                    <p>Create a Logo</p>
-                    <p>10$</p>
-                </div>
-                <div class="job">
-                    <p>#1</p>
-                    <p>Create a Logo</p>
-                    <p>10$</p>
-                </div>
-                <div class="job">
-                    <p>#1</p>
-                    <p>Create a Logo</p>
-                    <p>10$</p>
-                </div>
+                <?php }}?>
+                    
             <div>
         </div>
     </div>
 </div>
-
+<?php }} ?>
 <script>
     function showPwd(){
         document.getElementsByClassName("pwd-hide")[0].style.display = "none";

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 4%;
+    margin-top: 5%;
     font-family: "Itim", cursive;
 }
 .jobs-profile{
@@ -54,7 +54,7 @@
     padding: 0.5px 3%;
     margin-top: 4%;
     border-radius: 15px;
-    width: 87%;
+    width: 88.7%;
     font-size: 16px;
     font-weight: bold;
     display: flex;
@@ -152,4 +152,68 @@
 .pwd-hide img, .pwd-show img{
   width:20px;
   cursor: pointer;
+} 
+
+@media only screen and (max-width: 600px) {
+  .menu {
+    display:none;
+  }
+  nav{
+    margin-top: 8%;
+  }
+  .logo {
+    width: 30%;
+  }
+  .icon-menu {
+    width: 8%;
+  }
+  .vertical {
+    display:none;
+  }
+  .profile-content{
+    flex-wrap: wrap;
+  }
+  .info-profile {
+    width: 100%;
+  }
+  .jobs-profile{
+    margin-top: 45%;
+    width: 100%;
+  }
+  .dashboard-page{
+    height: 96vh;
+  }
+  .job{
+    width :92%;
+  }
+  .open-menu {
+    transform: translate(-105%);
 }
+  .menu-items {
+    background-color: #FAD8FF;
+    color: #40096E;
+    padding: 1% 7%;
+    width: 50%;
+    margin-top: 104.5%;
+    border-radius: 10px 0 10px 10px;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    right: -65.5%;
+    text-align: left;
+  }
+  .row-menu{
+    margin-top: 35%;
+    margin-left: 9%;
+  }
+  .exit-menu {
+    width: 7%;
+  }
+  .head-jobs{
+    font-size: 15px;
+  }
+}
+
+
+

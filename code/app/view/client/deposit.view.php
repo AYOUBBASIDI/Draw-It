@@ -1,12 +1,16 @@
 <?php include APPROOT . '/view/include-client/header.php'; ?>
 
 <div class="deposit-page">
+<?php
+    if (isset($data["request"])){
+     foreach ($data["request"] as $item){ ?>
     <div class="header-depose">
         <h3>Deposit</h3>
-        <p>You have :   15$</p>
+        <p>You have :   <?php echo $item->wallet; ?> $</p>
     </div>
+    <?php }} ?>
     <div class="depo-content">
-        <form>
+        <form  action="<?php echo URLROOT; ?>moneys/depos" method="POST">
         <label for="method">Choose the method :</label><br/>
         <div class="methods">
         <div><input class="method" type="radio" name="method" value="paypal"><img class="method-icon" src="<?php echo URLROOT ?>img/paypal.png"></div>
@@ -16,7 +20,7 @@
         <input class="account" type="text" name="account" placeholder=""><br/>
         <label for="depos">Enter the depos :</label><br/>
         <input class="depos" type="text" name="depos" placeholder=""><br/>
-        <button class="deposit" type="submit"><a href="<?php echo URLROOT; ?>pages/client_dashboard">Deposit</a></button>
+        <button class="deposit" type="submit" name="get_money"><a>Deposit</a></button>
         </form>
 
     </div>

@@ -19,7 +19,7 @@
         <button class="cancel" type="submit"><a href="<?php echo URLROOT; ?>pages/client_dashboard">Cancel</a></button>
     </form>
     <div class="newColor">
-        <p>add color first<p><a><img src="<?php echo URLROOT ?>img/newjob.png"></a>
+        <p>add color first<p><a onclick="addcolor()"><img src="<?php echo URLROOT ?>img/newjob.png"></a>
     </div>
     <div class="colors-added">
         <h4>color added :</h4>
@@ -28,3 +28,19 @@
         <li>red #fffffff</li>
     </div>
 </div>
+<script>
+    
+    function addcolor(){
+        var newcolor = document.getElementById("favcolor").value;
+        var oldcolor = newcolor;
+        let colors = ["red", "bleu"];
+        console.log('Array before push: ' + colors);
+        // append new value to the array
+        colors.push(oldcolor);
+        console.log(colors);
+
+
+
+
+    }
+</script>

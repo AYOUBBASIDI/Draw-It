@@ -54,8 +54,7 @@ class admin extends database
     }
     public function delete_user($id)
     {
-        $this->db->query("DELETE FROM jobs where creator = :id;
-                                    DELETE FROM users WHERE id_user = :id");
+        $this->db->query("DELETE FROM users WHERE id_user = :id");
         $this->db->bind(':id', $id);
         return $this->db->execute();
     }

@@ -74,26 +74,47 @@ class job extends database
     }
 
     public function acceptJob($data){
-        $this->db->query("SELECT requests FROM jobs WHERE id_job = :id" );
-        $this->db->bind(':id', $data["job_accepted"]);
+        $this->db->query("SELECT wallet FROM users WHERE id_user = :id" );
+        $this->db->bind(':id', $_SESSION["id"]);
         $request = $this->db->fetch();
-        $value = $request->requests - 1 ;
-        $this->db->query("INSERT INTO accepted (job_accepted,designer_accepted) VALUES (:job,:designer);
-                                    UPDATE jobs SET requests = (:value)  WHERE id_job = :job ;
-                                    DELETE FROM requests WHERE id = :request ");
-        $this->db->bind(':job', $data["job_accepted"]);
-        $this->db->bind(":value", $value);
-        $this->db->bind(":designer", $data["user_accepted"]);
-        $this->db->bind(":request", $data["request"]);
-        return $this->db->execute();
-    }
-    // public function deleteRequest($data){
-    //     $this->db->query("SELECT requests FROM jobs WHERE id_job = :id" );
-    //     $this->db->bind(':id', $data["job"]);
-    //     $request = $this->db->fetch();
-    //     $value = $request->requests -1;
+        if ($request->wallet < $data["price"]){
+            $result = "err";
+            return $result;
+        }else{
+            $this->db->query("INSERT INTO accepted (job_accepted,designer_accepted) VALUES (:job,:designer);
+                                        UPDATE jobs SET requests = requests - 1 WHERE id_job = :job ;
+                                        DELETE FROM requests WHERE id = :request ;
+                                        UPDATE users SET wallet = wallet - :price WHERE id_user = :client ;
+                                        INSERT INTO wallet_admin (price,receiver,recipient,forjob) VALUES (:price,:designer,:client,:job);
+                                        ;");
+            $this->db->bind(':job', $data["job_accepted"]);
+            $this->db->bind(":designer", $data["user_accepted"]);
+            $this->db->bind(":client", $_SESSION["id"]);
+            $this->db->bind(":request", $data["request"]);
+            $this->db->bind(":price", $data["price"]);
+            return $this->db->execute();
 
-    // }
+        }
+        // $this->db->query("SELECT requests FROM jobs WHERE id_job = :id" );
+        // $this->db->bind(':id', $data["job_accepted"]);
+        // $request = $this->db->fetch();
+        // $value = $request->requests - 1 ;
+        // $this->db->query("INSERT INTO accepted (job_accepted,designer_accepted) VALUES (:job,:designer);
+        //                             UPDATE jobs SET requests = (:value)  WHERE id_job = :job ;
+        //                             DELETE FROM requests WHERE id = :request ");
+        // $this->db->bind(':job', $data["job_accepted"]);
+        // $this->db->bind(":value", $value);
+        // $this->db->bind(":designer", $data["user_accepted"]);
+        // $this->db->bind(":request", $data["request"]);
+        // return $this->db->execute();
+    }
+    public function deleteRequest($data){
+        $this->db->query("SELECT requests FROM jobs WHERE id_job = :id" );
+        $this->db->bind(':id', $data["job"]);
+        $request = $this->db->fetch();
+        $value = $request->requests -1;
+
+    }
 
     public function jobsForAdmin(){
         $this->db->query("SELECT * FROM jobs");
@@ -122,5 +143,27 @@ class job extends database
         return $rendu;
     } 
 
+public function goodjob($data)
+{ 
+    $payer = $data["price"] * 0.8 ;
+
+    $this->db->query("INSERT INTO completed_job (job_completed,designer_id,client_id) VALUES (:job_completed,:designer_id,:client_id);
+                                UPDATE users SET wallet = wallet + :price ,  num_job_complet = num_job_complet + 1   WHERE id_user = :designer_id ;
+                                UPDATE users SET  num_job_complet = num_job_complet + 1 WHERE id_user = :client_id;
+                                UPDATE wallet_admin SET  price = price - :price  WHERE receiver = :designer_id AND recipient = :client_id AND forjob = :job_completed;
+                                DELETE FROM accepted WHERE job_accepted = :job_completed AND designer_accepted = :designer_id");
+    $this->db->bind(":job_completed", $data["id_job"]);
+    $this->db->bind(":designer_id", $data["id_user"]);
+    $this->db->bind(":price", $payer);
+    $this->db->bind(":client_id", $_SESSION["id"]);
+    return $this->db->execute();
+}
+public function getCompletedJobs()
+{
+    $this->db->query("SELECT completed_job.*,jobs.type,jobs.price from completed_job INNER JOIN jobs on completed_job.job_completed = jobs.id_job WHERE designer_id = :id or client_id = :id ");
+    $this->db->bind(":id", $_SESSION["id"]);
+    $job = $this->db->fetchAll();
+    return $job;
+}
 
 }

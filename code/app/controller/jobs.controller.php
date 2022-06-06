@@ -35,13 +35,14 @@ class jobs extends controller
         }
     }
 
-    public function acceptJob($user,$job,$request){
+    public function acceptJob($user,$job,$request,$price){
         // echo $request;
         // die();
         $data = [
                             "job_accepted" => $job,
                             "user_accepted" => $user,
                             "request" => $request,
+                            "price" => $price,
                         ];
 
                         if($this->jobModel->acceptJob($data)){                          

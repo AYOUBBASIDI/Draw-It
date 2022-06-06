@@ -6,6 +6,7 @@ class Pages extends controller
         $this->userModel = $this->model('user');
         $this->jobModel = $this->model('job');
         $this->adminModel = $this->model('admin');
+        $this->moneyModel = $this->model('money');
     }
     public function index()
     {
@@ -37,9 +38,11 @@ class Pages extends controller
     }
     public function client_profile(){
         $user = $this->userModel->getUserById();
+        $job_complete = $this->jobModel->getCompletedJobs();
         if($user){
             $data = [
-                 'user' => $user
+                 'user' => $user,
+                 'job_complete' => $job_complete,
             ];
         $this-> view('client/profile' , $data);
         }else{
@@ -77,7 +80,11 @@ class Pages extends controller
         $this-> view('client/requests' , $data);
     }
     public function deposit(){
-        $this-> view('client/deposit');
+        $request = $this->moneyModel->for_money_page();
+        $data = [
+            'request' => $request
+       ];   
+        $this-> view('client/deposit', $data);
     }
     public function asFreelancer(){
         $this-> view('designer/hello');
@@ -94,14 +101,12 @@ class Pages extends controller
     }
     public function designer_profile(){
         $user = $this->userModel->getUserById();
-        if($user){
+        $job_complete = $this->jobModel->getCompletedJobs();
             $data = [
-                 'user' => $user
+                 'user' => $user,
+                 'job_complete' => $job_complete,
             ];
         $this-> view('designer/profile' , $data);
-        }else{
-            var_dump($user) ;
-        }
     }
     public function designer_dashboard(){
         $requests = $this->jobModel->getrequests();
@@ -113,13 +118,20 @@ class Pages extends controller
                  'requests' => $requests,
                  'accepted' => $accepted,
             ];    
+            // var_dump($data["accepted"]);
+            // die();
                 $this-> view('designer/dashboard' ,$data);
             
     }
     public function withdraw(){
-        $this-> view('designer/withdraw');
+        $wallet = $this->moneyModel->for_money_page();
+        $data = [
+            'wallet' => $wallet,
+       ];   
+        $this-> view('designer/withdraw',$data);
     }
     public function request_job($id){
+        
         $job = $this->jobModel->getJobById($id);
         if($job){
             $data = [

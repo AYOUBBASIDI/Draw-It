@@ -88,5 +88,17 @@
     height: 0px;
     color: white;
   }
-  /*# sourceMappingURL=login.css.map */
+
+  @media only screen and (max-width: 600px) {
+    .loginForm {
+      width: 85%;
+      left: 7%;
+  }
+  .btnForm p:before {
+    content: "_______";
+  }
+  .btnForm p:after {
+    content: "_______";
+  }
+  }
   

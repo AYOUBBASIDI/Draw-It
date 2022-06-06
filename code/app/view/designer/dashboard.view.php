@@ -2,9 +2,9 @@
 
 <div class="dashboard-client">
 <div class="dashborad-menu-client">
-        <button class="all_jobs_menu_btn_client" type="submit" onclick="action('all')"><a>All rendered</a></button>
-        <button class="accepted_jobs_menu_btn_client" type="submit" onclick="action('accepted')"><a>Accepted Jobs</a></button>
-        <button class="waiting_jobs_menu_btn_client" type="submit" onclick="action('waiting')"><a>Jobs Waiting</a></button>
+        <button class="all_jobs_menu_btn_client" type="submit" onclick="action('all')"><a class="txt-btn">All rendered</a></button>
+        <button class="accepted_jobs_menu_btn_client" type="submit" onclick="action('accepted')"><a class="txt-btn">Accepted Jobs</a></button>
+        <button class="waiting_jobs_menu_btn_client" type="submit" onclick="action('waiting')"><a class="txt-btn">Jobs Waiting</a></button>
     </div>
 </div>
 <div class="all-job">
@@ -19,35 +19,13 @@
             <p> <?php echo $job->description; ?></p>
             <p>Type :  <?php echo $job->type; ?></p>
             <p>Max Time :  <?php echo $job->delay; ?> </p>
-            <p> <?php echo $job->price; ?></p>
+            <p> <?php echo $job->price; ?> $</p>
             <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job/<?php echo $job->id_job; ?>">See More</a></p>
         </div>
 
     <?php }}?>
     </div>
-    <div class="filter">
-        <h3>Filter search :</h3>
-        <form>
-            <label for="p">Price :</label>
-            <div class="price-filter">
-                <div class="price-choice"><input type="radio" name="price"><p>5$ - 10$</p></div>
-                <div class="price-choice"><input type="radio" name="price"><p>20$ - 25$</p></div>
-                <div class="price-choice"><input type="radio" name="price"><p>15$ - 20$</p></div>
-                <div class="price-choice"><input type="radio" name="price"><p>30$ -  .....</p></div>
-            </div>
-            <div class="hr"></div><br>
-            <label for="p">Type :</label><br><br>
-            <select>
-                <option selected>Choose Type</option>
-                <option value="1">option1</option>
-                <option>option2</option>
-                <option>option3</option>
-            </select>
-            <div class="hr"></div>
-            <button" class="apply-filter">Apply</button>
-        </form>
-    </div>
-    </div>
+</div>
 </div>
 
 
@@ -56,15 +34,16 @@
     <div class="accepted-job-content">
     <?php
     if (isset($data["accepted"])){
+        // echo "hello";
             foreach ($data["accepted"] as $item){     
          ?>
         <div class="job-accept">
-            <p><?php echo $item->fname;?> <?php echo $item->lname; ?></p>
-            <p>Type : <?php echo $item->type;?></p>
-            <p>Max Time : <?php echo $item->delay;?></p>
+            <p class="first-row"><?php echo $item->fname;?> <?php echo $item->lname; ?></p>
+            <p class="second-row">Type : <?php echo $item->type;?></p>
+            <p class="second-row">Max Time : <?php echo $item->delay;?></p>
             <a href="<?php echo URLROOT; ?>pages/submit_rendu/<?php echo $item->id_job;?>"><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
         </div>
-        <?php }} ?>
+        <?php } }?>
     </div>
 </div>
 
@@ -81,7 +60,7 @@
                 <p><?php echo $request->description ?></p>
                 <p>Type : <?php echo $request->type ?></p>
                 <p>Max Time : <?php echo $request->delay ?> </p>
-                <p><?php echo $request->price ?></p>
+                <p><?php echo $request->price ?> $</p>
                 <p class="see-more"><a href="<?php echo URLROOT; ?>pages/details_job">See More</a></p>
             </div>
 

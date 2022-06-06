@@ -87,6 +87,28 @@
   <button class="accept"><a href="<?php echo URLROOT; ?>admins/accept_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Accept</a></button>
   <button class="reject"><a href="<?php echo URLROOT; ?>admins/reject_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Reject</a></button>
 </div>
+<div class="cart">
+  <h4>designer name :</h4>
+  <p><?php echo $item->fname; ?><?php echo $item->lname; ?></p>
+  <h4>Messsage :</h4>
+  <p><?php echo $item->message; ?></p>
+  <h4>rendred</h4>
+  <a href="<?php echo URLROOT; ?>admins/upload/<?php echo $item->rendu;?>">Click here to upload it</a>
+  <h4>Test Result</h4>
+  <button class="accept"><a href="<?php echo URLROOT; ?>admins/accept_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Accept</a></button>
+  <button class="reject"><a href="<?php echo URLROOT; ?>admins/reject_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Reject</a></button>
+</div>
+<div class="cart">
+  <h4>designer name :</h4>
+  <p><?php echo $item->fname; ?><?php echo $item->lname; ?></p>
+  <h4>Messsage :</h4>
+  <p><?php echo $item->message; ?></p>
+  <h4>rendred</h4>
+  <a href="<?php echo URLROOT; ?>admins/upload/<?php echo $item->rendu;?>">Click here to upload it</a>
+  <h4>Test Result</h4>
+  <button class="accept"><a href="<?php echo URLROOT; ?>admins/accept_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Accept</a></button>
+  <button class="reject"><a href="<?php echo URLROOT; ?>admins/reject_designer/<?php echo $item->id_user; ?>/<?php echo $item->id_rendu; ?>">Reject</a></button>
+</div>
 
 <?php }} ?>
 </div>

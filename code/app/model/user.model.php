@@ -26,7 +26,6 @@ class user extends database
         $this->db->bind(":email", $data["email"]);
         $this->db->bind(":pwd", $data["pwd"]);
         $this->db->bind(":role", $data["role"]);
-        // $this->db->execute();
         return $this->db->execute();
     }
     public function checklogin($email,$pwd){

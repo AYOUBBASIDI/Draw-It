@@ -64,6 +64,7 @@
   /* .all-jobs-profile div{
 
   } */
+
   .job{
     border:solid 3px #F9CDFF;
     color: #F9CDFF;
@@ -78,6 +79,7 @@
     align-items: center;
     width: 93%;
   }
+
   .jobs-profile h3{
     letter-spacing: 3px;
   }
@@ -153,6 +155,10 @@
   width:20px;
   cursor: pointer;
 } 
+.no{
+  display:flex;
+  justify-content: center;
+}
 
 @media only screen and (max-width: 600px) {
   .menu {

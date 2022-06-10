@@ -43,6 +43,11 @@
     padding: 2% 5%;
     width: 36%;
     position: relative;
+    cursor: pointer;
+  }
+  .choice:hover{
+    background-color: #F3A1FF;
+    color:#220554;
   }
   .radio-choice{
     position: absolute;

@@ -31,6 +31,7 @@ class jobs extends controller
             "id" => $id,
         ];
         if($this->jobModel->addrequest($data)){
+            $_SESSION["status"] = "the request has been sent";
             redirect("pages/designer_dashboard");
         }
     }
@@ -71,9 +72,20 @@ class jobs extends controller
                         ];
 
                         if($this->jobModel->new_rendu($data)){
+                            $_SESSION["status"] = "Your rendered has been sent seccessfuly , Good Job !";
                             redirect("pages/designer_dashboard");
                         }
             }
+        }
+    }
+
+
+    public function deletejob($id){
+        $data = [
+            "id" => $id,
+        ];
+        if($this->jobModel->deletejob($data)){
+            redirect("pages/client_dashboard");
         }
     }
 

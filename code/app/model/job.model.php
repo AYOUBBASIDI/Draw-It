@@ -9,26 +9,26 @@ class job extends database
 
     public function addjob($data)
     {
-        $this->db->query("INSERT INTO jobs (type,favcolor,delay,price,description,creator) VALUES (:type,:favcolor,:delay,:price,:description,:creator)");
+        $this->db->query("INSERT INTO jobs (type,favcolor,delay,price,description,creator) VALUES (:type,:favcolor,:delay,:price,:description,:creator);
+                                    INSERT INTO jobs_sh (type_sh,favcolor_sh,delay_sh,price_sh,description_sh,creator_sh) VALUES (:type,:favcolor,:delay,:price,:description,:creator)");
         $this->db->bind(":type", $data["type"]);
         $this->db->bind(":favcolor", $data["favcolor"]);
         $this->db->bind(":delay", $data["delay"]);
         $this->db->bind(":price", $data["price"]);
         $this->db->bind(":description", $data["description"]);
         $this->db->bind(":creator", $data["creator"]);
-        // $this->db->execute();
         return $this->db->execute();
     }
 
     public function getjobs()
     {
-        $this->db->query("SELECT * FROM jobs WHERE creator = :id");
+        $this->db->query("SELECT * FROM jobs_sh WHERE creator_sh = :id");
         $this->db->bind(':id', $_SESSION['id']);
         $jobs = $this->db->fetchAll();
         return $jobs;
     }
     public function getJobById($id){
-        $this->db->query("SELECT jobs.*,users.fname,users.lname from jobs INNER JOIN users on jobs.creator = users.id_user WHERE id_job = :id");
+        $this->db->query("SELECT jobs_sh.*,users.fname,users.lname from jobs_sh INNER JOIN users on jobs_sh.creator_sh = users.id_user WHERE id_job_sh = :id");
         $this->db->bind(':id', $id);
         $job = $this->db->fetchAll();
         return $job;
@@ -65,6 +65,7 @@ class job extends database
         $request = $this->db->fetch();
         $value = $request->requests +1;
         $this->db->query("UPDATE jobs SET requests = (:value)  WHERE id_job = :id ;
+                                    UPDATE jobs_sh SET requests_sh = (:value)  WHERE id_job_sh = :id ;
                                     INSERT INTO requests (job,designer) VALUES (:job,:designer) ");
         $this->db->bind(":value", $value);
         $this->db->bind(':id', $data["id"]);
@@ -83,8 +84,10 @@ class job extends database
         }else{
             $this->db->query("INSERT INTO accepted (job_accepted,designer_accepted) VALUES (:job,:designer);
                                         UPDATE jobs SET requests = requests - 1 WHERE id_job = :job ;
+                                        UPDATE jobs_sh SET requests_sh = requests_sh - 1 WHERE id_job_sh = :job ;
                                         DELETE FROM requests WHERE id = :request ;
                                         UPDATE users SET wallet = wallet - :price WHERE id_user = :client ;
+                                        UPDATE users SET wallet_sh = wallet_sh - :price WHERE id_user_sh = :client ;
                                         INSERT INTO wallet_admin (price,receiver,recipient,forjob) VALUES (:price,:designer,:client,:job);
                                         ;");
             $this->db->bind(':job', $data["job_accepted"]);
@@ -164,6 +167,12 @@ public function getCompletedJobs()
     $this->db->bind(":id", $_SESSION["id"]);
     $job = $this->db->fetchAll();
     return $job;
+}
+public function deletejob($data)
+{
+    $this->db->query("DELETE FROM jobs_sh WHERE id_job_sh = :id");
+    $this->db->bind(":id", $data["id"]);
+    return $this->db->execute();
 }
 
 }

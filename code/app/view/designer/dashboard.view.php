@@ -1,6 +1,13 @@
 <?php include APPROOT . '/view/include-designer/header.php'; ?>
 
 <div class="dashboard-client">
+    
+<?php if(isset($_SESSION["status"])){ ?>
+        <p class ="status"><?php echo $_SESSION["status"]; ?></p>
+        <?php }
+        $_SESSION['status'] = null;
+         ?>
+
 <div class="dashborad-menu-client">
         <button class="all_jobs_menu_btn_client" type="submit" onclick="action('all')"><a class="txt-btn">All rendered</a></button>
         <button class="accepted_jobs_menu_btn_client" type="submit" onclick="action('accepted')"><a class="txt-btn">Accepted Jobs</a></button>

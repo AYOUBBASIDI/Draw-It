@@ -7,7 +7,7 @@
     </div>
     <div class="all-rendred">
     <?php
-    if (isset($data["rendu"])){
+    if (!empty($data["rendu"])){
      foreach ($data["rendu"] as $rendu){ ?>
         <div class="rendred">
             <p class="first-line"><?php echo $rendu->fname; ?> <?php echo $rendu->lname; ?></p>
@@ -17,20 +17,34 @@
             <a class="line-icon" href="<?php echo URLROOT; ?>users/goodjob/<?php echo $rendu->id_job; ?>/<?php echo $rendu->id_user; ?>/<?php echo $rendu->price; ?>"><img class="icon-accept" src="<?php echo URLROOT ?>img/accept.png"></a>
             <a ><img class="icon-denied" src="<?php echo URLROOT ?>img/denied.png"></a>
         </div>
-    <?php }} ?>
+    <?php }}else{ ?>
+        <div class="no rendred">
+            <p class="norow">You don't have any rendred</p>
+        </div>
+        <?php } ?>
+
+    <div class="newjob">
+            <a href="<?php echo URLROOT; ?>pages/new_job">Add New Job <img src="<?php echo URLROOT ?>img/newjob.png"></a>
+        </div>
+
     </div>
     <div class="jobs">
     
     <?php
-    if (isset($data["jobs"])){
+    if (!empty($data["jobs"])){
      foreach ($data["jobs"] as $job){ ?>
         <div class="rendred">
-            <p class="row">Type : <?php echo $job->type; ?></p>
-            <p class="row"><a href="<?php echo URLROOT; ?>pages/details/<?php echo $job->id_job; ?>">See Details</a></p>
-            <p class="row"><a href="<?php echo URLROOT; ?>pages/requests/<?php echo $job->id_job; ?>"><?php echo $job->requests; ?> request</a></p>
-            <a><img class="icon-delete" src="<?php echo URLROOT ?>img/delete.png"></a>
+            <p class="row">Type : <?php echo $job->type_sh; ?></p>
+            <p class="row"><a href="<?php echo URLROOT; ?>pages/details/<?php echo $job->id_job_sh; ?>">See Details</a></p>
+            <p class="row"><a href="<?php echo URLROOT; ?>pages/requests/<?php echo $job->id_job_sh; ?>"><?php echo $job->requests_sh; ?> request</a></p>
+            <a href="<?php echo URLROOT; ?>jobs/deletejob/<?php echo $job->id_job_sh; ?>"><img class="icon-delete" src="<?php echo URLROOT ?>img/delete.png"></a>
         </div>
-        <?php }} ?>
+        <?php }}else{ ?>
+        <div class="no rendred">
+            <p class="norow">You don't have any post <a href="<?php echo URLROOT; ?>pages/new_job">add one</a></p>
+        </div>
+        <?php } ?>
+
 
         <div class="newjob">
             <a href="<?php echo URLROOT; ?>pages/new_job">Add New Job <img src="<?php echo URLROOT ?>img/newjob.png"></a>

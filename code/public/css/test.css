@@ -24,11 +24,14 @@
   .file-rendu{
     border: solid #F3A1FF;
     width: 45%;
+    height: 133px;
     display: flex !important;
     position: relative;
     border-radius: 10px;
     flex-direction: column;
     align-items: center !important;
+    justify-content: center;
+
   }
   .description div{
     align-items: baseline;

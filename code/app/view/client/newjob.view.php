@@ -9,8 +9,8 @@
             <label for="color" class="some">Choose colors :</label><input type="color" id="favcolor" name="favcolor" value="#ff0000" class="color">
         </div>
         <div class="row-type-one">
-        <input type="text" name="delay" placeholder="Max Time per hour">
-        <input type="text" name="price" placeholder="Labor price per $" class="some">
+        <input type="number" min="1" name="delay" placeholder="Max Time per hour">
+        <input type="number" min="5" name="price" placeholder="Labor price per $" class="some">
         </div>
         <div class="row-type-two">
             <textarea id="story" name="description" rows="5" cols="60" maxlenght placeholder="Description"></textarea>
@@ -18,29 +18,18 @@
         <button class="addjob" type="submit" name="newjob"><a>Create Job</a></button>
         <button class="cancel" type="submit"><a href="<?php echo URLROOT; ?>pages/client_dashboard">Cancel</a></button>
     </form>
-    <div class="newColor">
-        <p>add color first<p><a onclick="addcolor()"><img src="<?php echo URLROOT ?>img/newjob.png"></a>
-    </div>
-    <div class="colors-added">
-        <h4>color added :</h4>
-        <li>red #fffffff</li>
-        <li>red #fffffff</li>
-        <li>red #fffffff</li>
-    </div>
 </div>
 <script>
+    var color = document.getElementById("favcolor").value;
     
+    var colors = [];
     function addcolor(){
-        var newcolor = document.getElementById("favcolor").value;
-        var oldcolor = newcolor;
-        let colors = ["red", "bleu"];
-        console.log('Array before push: ' + colors);
-        // append new value to the array
-        colors.push(oldcolor);
+        console.log(color);
+        colors.push(color);
         console.log(colors);
-
-
-
-
     }
+    for (var i = 0; i < colors.length; i++) {
+        document.getElementById("color").innerHTML = colors[i];
+    }
+    
 </script>

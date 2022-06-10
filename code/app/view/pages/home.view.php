@@ -25,10 +25,11 @@
         <div class="row2"><input type="password" placeholder="password" name="pwd" required/></div>
         <input type="hidden" name="role" value="client"/>
         <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and Privacy Policy.</p></div>
-        <div class="btnPop"><button class="creer" type="submit" name="addclient">Create My Account</button>
+        <div class="btnPop"><button class="creerHome" type="submit" name="addclient" onclick="added()">Create My Account</button>
         <button class="Log" type="submit">Log In</button></div>
         </form>
     </div>
+    <div>
     <div class="popUp2" id="addD">
         <img onclick="hideD()" class="x" src="<?php echo URLROOT ?>public/img/x.png" alt="x">
         <h3>Build your career right here.</h3><hr/>
@@ -39,10 +40,11 @@
         <div class="row2"><input type="password" placeholder="password" name="pwd" required/></div>
         <input type="hidden" name="role" value="designer"/>
         <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and Privacy Policy.</p></div>
-        <div class="btnPop"><button class="creer" type="submit" name="adddesigner">Create My Account</button>
+        <div class="btnPop"><button class="creerHome" type="submit" name="adddesigner">Create My Account</button>
         <button class="Log" type="submit">Log In</button></div>
         </form>
     </div>
+</div>
     <footer>
         <p>powered by :</p>
         <div class="powered-icon"><img src="<?php echo URLROOT ?>public/img/youcode.png"  alt="" id=""><img class="simp" src="<?php echo URLROOT ?>public/img/simplon.png" alt="" id=""></div>
@@ -62,10 +64,34 @@
         function hideD() {
         document.getElementById("addD").classList.remove("show");
         }
+        function added() {
+        // document.getElementById("addD").classList.remove("show");
+        // alert("Your account has been craeated seccessfuly , Welcome !");
+        swal({
+            title: "User created!",
+            text: "Suceess message sent!!",
+            icon: "success",
+            button: "Ok",
+            timer: 2000
+        });
+        }
         
     
 
     </script>
+    <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+            var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+            (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/62a1c74e7b967b117993a64d/1g53v52r0';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+            })();
+        </script>
+    <!--End of Tawk.to Script-->
 
 
 </body>

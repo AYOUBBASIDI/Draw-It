@@ -19,12 +19,11 @@
         </div>  
         <div class="line">
         <label for="type">Max time :</label>
-        <p class="line-content"><?php echo $item->delay; ?></p>
+        <p class="line-content"><?php echo $item->delay; ?> hour (s)</p>
         </div>  
         <div class="">
         <label for="Color">Color :</label>
         <p><?php echo $item->favcolor; ?></p>
-        <p>Black : #000000</p>
         </div>  
         <div class="line">
         <label for="Price">Price :</label>

@@ -24,6 +24,10 @@ class Pages extends controller
     {
         $this-> view('pages/asclient');
     }
+    public function asdesigner()
+    {
+        $this-> view('pages/asFreelancer');
+    }
     public function hello_Client(){
         $this-> view('client/hello');
     }
@@ -131,14 +135,11 @@ class Pages extends controller
         $this-> view('designer/withdraw',$data);
     }
     public function request_job($id){
-        
         $job = $this->jobModel->getJobById($id);
-        if($job){
             $data = [
                  'job' => $job
             ];
         $this-> view('designer/request' , $data);
-        }
     }
     public function details_job(){
         $this-> view('designer/details');
@@ -160,6 +161,9 @@ class Pages extends controller
     }
     public function rejected(){
         $this-> view('designer/rejected');
+    }
+    public function googleapi(){
+        $this-> view('pages/googleapi');
     }
     
 

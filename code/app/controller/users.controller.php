@@ -35,7 +35,8 @@ class users extends controller
                             "role" => $_POST["role"],
                         ];
                         if($this->userModel->addclient($data)){
-                        redirect("pages/home");
+                        // $_SESSION["alert"] = "true";
+                        redirect("pages/login");
                     }
         }
     }
@@ -50,7 +51,8 @@ class users extends controller
                                 "role" => $_POST["role"],
                             ];
                             if($this->userModel->addfreelancer($data)){
-                            redirect("pages/home", $data);
+                            // $_SESSION["alert"] = "true";
+                            redirect("pages/login");
                         }
             }
     }
@@ -101,6 +103,7 @@ class users extends controller
                             }
                     }
                 }else{
+                                $_SESSION['error'] = "E-mail or Password is incorrect !";
                                 redirect("pages/login");
                             }
             }

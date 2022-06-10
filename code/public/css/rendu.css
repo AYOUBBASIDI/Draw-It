@@ -44,3 +44,19 @@
     margin-top: 2%;
     width: 29% !important;
   }
+  #inputTag{
+      display:none;
+  }
+  label{
+      cursor: pointer;
+  }
+  .forRendu{
+    display: flex;
+    cursor: pointer;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 62%;
+  }

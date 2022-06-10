@@ -17,26 +17,25 @@ if (isset($data["job"])){
             </div>  
             <div class="line">
                 <label for="type">Type :</label>
-                <p class="line-content"><?php echo $item->type;?></p>
+                <p class="line-content"><?php echo $item->type_sh;?></p>
             </div>  
 
             <div class="">
                 <label for="Details">Details :</label><br/>
-                <p><?php echo $item->description;?></p>
+                <p><?php echo $item->description_sh;?></p>
             </div> 
 
             <div class="line">
                 <label for="type">Max time :</label>
-                <p class="line-content"><?php echo $item->delay;?></p>
+                <p class="line-content"><?php echo $item->delay_sh;?></p>
             </div>  
             <div class="">
                 <label for="Color">Color :</label>
-                <p><?php echo $item->favcolor;?></p>
-                <p>Black : #000000</p>
-            </div>  
+                <p><?php echo $item->favcolor_sh;?></p>
+            </div>
             <div class="line">
                 <label for="Price">Price :</label>
-                <p class="line-content"><?php echo $item->price;?></p>
+                <p class="line-content"><?php echo $item->price_sh;?></p>
             </div>
         </div>
 
@@ -47,13 +46,18 @@ if (isset($data["job"])){
                 <h2>Add rendering</h2>
                 <div class="rendu-content">
                     <div class="file-rendu">
-                        <p>import a file</p>
-                        <p><a><img src="<?php echo URLROOT ?>public/img/addfile.png"></a></p>
-                        <input type="file" name="rendu">
+                        <!-- <p>import a file</p>
+                        <p><a></a></p> -->
+                        <label class="forRendu" for="inputTag" style="color: white;font-size: 13px;">
+                            Select File (Format : PDF)
+                        <img src="<?php echo URLROOT ?>public/img/addfile.png">
+                        <input id="inputTag" type="file" name="rendu" accept="application/pdf">
+                        <span id="imageName"></span>
+                        <label>
                     </div>
-                    <div><input type="hidden" name="id_job" value="<?php echo $item->id_job;?>"></div>
+                    <div><input type="hidden" name="id_job" value="<?php echo $item->id_job_sh;?>" required/></div>
                     <div class="message">
-                        <textarea type="text" name="message" placeholder="Write Something"></textarea>
+                        <textarea type="text" name="message" placeholder="Write Something" required></textarea>
                     </div>
                 </div>
                         <button class="change-test" type ="submit" name="rendu_client">Submit</button>
@@ -83,4 +87,12 @@ function changePart(part){
             btn2.style="background-color: #F3A1FF;";
         }
     }
+    let input = document.getElementById("inputTag");
+        let imageName = document.getElementById("imageName")
+
+        input.addEventListener("change", ()=>{
+            let inputImage = document.querySelector("input[type=file]").files[0];
+
+            imageName.innerText = inputImage.name;
+        })
 </script>

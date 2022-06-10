@@ -123,10 +123,11 @@ nav{
 }
 .dashborad-menu-client{
     margin-left: 3%;
-    margin-top: 4%;
+    margin-top: 2%;
     display: flex;
     justify-content: space-between;
     width: 55%;
+
 }
 .all-rendred{
     margin-top: 3%;
@@ -213,7 +214,7 @@ nav{
 }
 .content-alljobs{
     width: 96%;
-    height: 424px;
+    height: 445px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -360,6 +361,22 @@ option:hover{
   }
   .line-icon{
       width:5%;
+  }
+  .no{
+      display:flex;
+      justify-content: center;
+  }
+  .norow{
+      width:25%;
+  }
+  .status{
+    color: #f4b1ff;
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 10px;
+    width: 91.5%;
+    margin-left: 3%;
+    font-family: "Itim", cursive;
   }
 
   @media only screen and (max-width: 600px) {

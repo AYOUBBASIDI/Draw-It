@@ -159,6 +159,7 @@
     width: 40%;
     padding: 1%;
     display: none;
+    box-shadow: 0 0 50px 10px #000;
   }
   
   .popUp1 h3 {
@@ -189,6 +190,7 @@
     width: 40%;
     padding: 1%;
     display: none;
+    box-shadow: 0 0 50px 10px #000;
   }
   
   .popUp2 h3 {
@@ -250,7 +252,7 @@
     margin-left: 2%;
   }
   
-  .creer {
+  .creerHome {
     border: none;
     font-family: "Itim", cursive;
     border-radius: 20px;

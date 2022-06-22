@@ -34,8 +34,17 @@ class users extends controller
                             "pwd" => PASSWORD_HASH($_POST["pwd"], PASSWORD_DEFAULT),
                             "role" => $_POST["role"],
                         ];
-                        if($this->userModel->addclient($data)){
-                        // $_SESSION["alert"] = "true";
+                        // if ($result == true){
+                        //     $_SESSION["alert"] = "exist";
+                        //     redirect("pages/home");
+                        // }
+                        $result = $this->userModel->addclient($data);
+                            // echo $result;
+                        if($result === "exist"){
+                            $_SESSION["alert"] = "true";
+                            redirect("pages/home");
+                        }elseif($result === "add"){
+                        $_SESSION["alert"] = "true";
                         redirect("pages/login");
                     }
         }
@@ -51,7 +60,7 @@ class users extends controller
                                 "role" => $_POST["role"],
                             ];
                             if($this->userModel->addfreelancer($data)){
-                            // $_SESSION["alert"] = "true";
+                            $_SESSION["alert"] = "true";
                             redirect("pages/login");
                         }
             }
@@ -176,15 +185,17 @@ class users extends controller
         }
         }
 
-        public function goodjob($id_job,$id_user,$price)
+        public function goodjob($id_job,$id_user,$price,$rendu)
         {
             $data = [
                 "id_job" => $id_job,
                 "id_user" => $id_user,
                 "price" => $price,
+                "rendu" => $rendu,
             ];
 
             if($this->jobModel->goodjob($data)){
+                $_SESSION["status"] = "You are satis....";
                 redirect("pages/client_dashboard");
             }
         }

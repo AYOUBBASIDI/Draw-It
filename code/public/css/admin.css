@@ -1,113 +1,41 @@
-@import "compass/css3";
- @import 'https://fonts.googleapis.com/css?family=Montserrat:300,400,700';
- body{
-	 display:flex;
-
- }
- .rwd-table {
-	 margin: 1em 0;
-	 min-width: 300px;
-}
- .rwd-table tr {
-	 border-top: 1px solid #ddd;
-	 border-bottom: 1px solid #ddd;
-}
- .rwd-table th {
-	 display: none;
-}
- .rwd-table td {
-	 display: block;
-}
- .rwd-table td:first-child {
-	 padding-top: 0.5em;
-}
- .rwd-table td:last-child {
-	 padding-bottom: 0.5em;
-}
- .rwd-table td:before {
-	 content: attr(data-th) ": ";
-	 font-weight: bold;
-	 width: 6.5em;
-	 display: inline-block;
-}
- @media (min-width: 480px) {
-	 .rwd-table td:before {
-		 display: none;
-	}
-}
- .rwd-table th, .rwd-table td {
-	 text-align: left;
-}
- @media (min-width: 480px) {
-	 .rwd-table th, .rwd-table td {
-		 display: table-cell;
-		 padding: 0.25em 0.5em;
-	}
-	 .rwd-table th:first-child, .rwd-table td:first-child {
-		 padding-left: 0;
-	}
-	 .rwd-table th:last-child, .rwd-table td:last-child {
-		 padding-right: 0;
-	}
-}
- body {
-	 padding: 0 2em;
-	 font-family: Montserrat, sans-serif;
-	 -webkit-font-smoothing: antialiased;
-	 text-rendering: optimizeLegibility;
-	 color: #444;
-	 background: #eee;
-	 display:flex;
-	 display: flex;
-	 flex-direction: column;
-	 align-items: center;
-}
- h1 {
-	 font-weight: normal;
-	 letter-spacing: -1px;
-	 color: #34495e;
-}
- .rwd-table {
-	 background: #34495e;
-	 color: #fff;
-	 border-radius: 0.4em;
-	 overflow: hidden;
-}
- .rwd-table tr {
-	 border-color: #46637f;
-}
- .rwd-table th, .rwd-table td {
-	 margin: 0.5em 1em;
-}
- @media (min-width: 480px) {
-	 .rwd-table th, .rwd-table td {
-		 padding: 1em !important;
-	}
-}
- .rwd-table th, .rwd-table td:before {
-	 color: #dd5;
-}
 .cart{
 	border: solid 2px;
     border-radius: 15px;
     padding: 10px;
-    width: 100%;
+    width: 30%;
+	margin-top:3%;
 }
 .all-rendred{
-	display: flex;
-    justify-content: space-evenly;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .accept{
-	border: none;
-    background: radial-gradient(green, transparent);
+    border: solid;
     width: 30%;
-    height: 20px;
+    border-radius: 5px;
+    background: white;
+    height: 25px;
+}
+.accept a{
+	color:black;
+	font-family: "Itim", cursive;
+	font-weight: bold;
 }
 .reject{
 	border: none;
-    background: radial-gradient(red, transparent);
     width: 30%;
-    height: 20px;
+    background: black;
+    height: 25px;
+    border-radius: 5px;
+}
+.reject a{
+	color:white;
+	font-family: "Itim", cursive;
+	font-weight: bold;
+}
+button a{
+	text-decoration:none;
 }
 form input{
 	border: solid;
@@ -122,16 +50,129 @@ form textarea{
     max-width: 100%;
     max-height: 80px;
     background: none;
-    width: 358px;
+    width: 100%;
     height: 128px;
     min-width: 20%;
     min-height: 80px;
 }
-.delete{
-	text-decoration:none;
+.text{
+	width: 100%;
+}
+
+
+
+nav{
+	color:white;
+	background:black;
+	height: 50px;
+	display: flex;
+    align-items: center;
+	justify-content: center;
+}
+body{
+	margin: 0;
+	font-family: "Itim", cursive;
+	
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 35%;
+}
+th{
+	background-color:black;
 	color:white;
 }
-.delete:hover{
-	text-decoration:underline;
+td{
+	text-align: center;
+	border: solid;
+}
+tr:hover{
+	background-color:black;
+	color:white;
+}
+table{
+	width:100%;
+}
+table a{
 	color:red;
+}
+.content{
+	padding: 1% 5%;
+}
+.active{
+	background: white;
+    color: black;
+
+}
+.test,.rende,.user{
+	padding: 0% 5%;
+    border-radius: 10px;
+	cursor: pointer;
+}
+#part3 ,#part2{
+	display:none;
+}
+.rend{
+	color:white;
+}
+form{
+	display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+	margin-top: 5%;
+}
+form div{
+	width: 49%;
+}
+.btn{
+    margin-left: 78%;
+    width: 50%;
+	font-family: "Itim", cursive;
+}
+.btn:hover{
+	background:black;
+	color:white;
+}
+.logout{
+	position: absolute;
+    right: 2%;
+    top: 2%;
+    background: white;
+    padding: 2px 20px;
+    border-radius: 10px;
+}
+.logout a{
+	text-decoration:none;
+	color:black;
+	font-weight:bold;
+	font-family: "Itim", cursive;
+}
+
+
+@media only screen and (max-width: 600px) {
+	#part1{
+		overflow: scroll;
+	}
+	.menu{
+		width: 78%;
+	}
+	.logout{
+		top: 9%;
+		background: black;
+	}
+	.logout a{
+		color: white;
+	}
+	.cart{
+		width: 92%;
+	}
+	form div {
+		width: 100%;
+	}
+	.btn {
+		margin-left: 0%;
+		width: 50%;
+	}
 }

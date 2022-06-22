@@ -60,3 +60,34 @@
     justify-content: space-between;
     height: 62%;
   }
+
+  @media only screen and (max-width: 600px) {
+  .btn-the-rendu {
+    position: absolute;
+    width: 100%;
+    left: 4.05%;
+  }
+  .btn-rendu-content {
+    border-radius: 8px 8px 0 0;
+    margin-top: -4%;
+    width: 30%;
+}
+
+.btn-rendu {
+    width: 30%;
+    border-radius: 8px 8px 0 0;
+    margin-top: -6%;
+    margin-left: 124px;
+}
+.rendu-content {
+    display: flex !important;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.file-rendu {
+    width: 98%;
+}
+.message {
+    width: 45%;
+}
+}

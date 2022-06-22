@@ -15,6 +15,7 @@
         <p>Forget the old rules. You can have the best people.<br/>Right now. Right here.</p>
         <button onclick="client()" class="btn1">Find Talent</button><button onclick="designer()" class="btn2">Find Work</button>
     </div>
+    
     <div class="popUp1" id="addC">
         <img onclick="hideC()" class="x" src="<?php echo URLROOT ?>public/img/x.png" alt="x">
         <h3>Get in-demand talent on demand</h3><hr/>
@@ -24,7 +25,7 @@
         <div class="row2"><input type="email" placeholder="E-mail Address" name="email" required/></div>
         <div class="row2"><input type="password" placeholder="password" name="pwd" required/></div>
         <input type="hidden" name="role" value="client"/>
-        <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and Privacy Policy.</p></div>
+        <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and <a class="pp" href="https://www.privacypolicygenerator.info/live.php?token=3VRv6K7ozYOyn04DZmTCZ82FEoDdrrup">Privacy Policy</a>.</p></div>
         <div class="btnPop"><button class="creerHome" type="submit" name="addclient" onclick="added()">Create My Account</button>
         <button class="Log" type="submit">Log In</button></div>
         </form>
@@ -39,7 +40,7 @@
         <div class="row2"><input type="email" placeholder="E-mail Address" name="email" required/></div>
         <div class="row2"><input type="password" placeholder="password" name="pwd" required/></div>
         <input type="hidden" name="role" value="designer"/>
-        <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and Privacy Policy.</p></div>
+        <div class="row3"><input class="check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, <br/>including the User Agreement and <a class="pp" href="https://www.privacypolicygenerator.info/live.php?token=3VRv6K7ozYOyn04DZmTCZ82FEoDdrrup">Privacy Policy</a>.</p></div>
         <div class="btnPop"><button class="creerHome" type="submit" name="adddesigner">Create My Account</button>
         <button class="Log" type="submit">Log In</button></div>
         </form>
@@ -64,17 +65,17 @@
         function hideD() {
         document.getElementById("addD").classList.remove("show");
         }
-        function added() {
-        // document.getElementById("addD").classList.remove("show");
-        // alert("Your account has been craeated seccessfuly , Welcome !");
-        swal({
-            title: "User created!",
-            text: "Suceess message sent!!",
-            icon: "success",
-            button: "Ok",
-            timer: 2000
-        });
-        }
+        // function added() {
+        // // document.getElementById("addD").classList.remove("show");
+        // // alert("Your account has been craeated seccessfuly , Welcome !");
+        // swal({
+        //     title: "User created!",
+        //     text: "Suceess message sent!!",
+        //     icon: "success",
+        //     button: "Ok",
+        //     timer: 2000
+        // });
+        // }
         
     
 
@@ -92,6 +93,22 @@
             })();
         </script>
     <!--End of Tawk.to Script-->
+
+    <script>
+        var session = <?php echo $_SESSION['alert']; ?> 
+
+if(session == 1){
+    swal({
+        title: "Error!",
+        text: "E-mail Already Exist!!",
+        icon: "error",
+        button: "Ok",
+    });
+}
+<?php 
+$_SESSION['alert'] = null;
+ ?>
+    </script>
 
 
 </body>

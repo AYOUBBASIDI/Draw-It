@@ -83,3 +83,8 @@
   .choice-log a:hover{
     color: #fff;
   }
+  
+  .pp{
+    text-decoration: underline;
+    color:white;
+  }

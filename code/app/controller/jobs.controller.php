@@ -21,6 +21,7 @@ class jobs extends controller
                         ];
 
                         if($this->jobModel->addjob($data)){
+                            $_SESSION["status"] = "Job has been created";
                             redirect("pages/client_dashboard", $data);
                         }
         }
@@ -36,7 +37,7 @@ class jobs extends controller
         }
     }
 
-    public function acceptJob($user,$job,$request,$price){
+    public function acceptJob($user,$name,$job,$request,$price){
         // echo $request;
         // die();
         $data = [
@@ -46,7 +47,23 @@ class jobs extends controller
                             "price" => $price,
                         ];
 
-                        if($this->jobModel->acceptJob($data)){                          
+                        if($this->jobModel->acceptJob($data)){  
+                            $_SESSION["status"] = "You choose $name to complet your job";                        
+                            redirect("pages/client_dashboard");
+                        }
+    }
+
+    public function rejected($user,$job,$rendu){
+        // echo $request;
+        // die();
+        $data = [
+                            "job_accepted" => $job,
+                            "user_accepted" => $user,
+                            "rendu" => $rendu,
+                        ];
+
+                        if($this->jobModel->rejected($data)){   
+                            $_SESSION["status"] = "You rejected the rendered";                         
                             redirect("pages/client_dashboard");
                         }
     }
@@ -85,7 +102,42 @@ class jobs extends controller
             "id" => $id,
         ];
         if($this->jobModel->deletejob($data)){
+            $_SESSION["status"] = "Your job has been deleted";
             redirect("pages/client_dashboard");
+        }
+    }
+
+
+    public function update(){
+        if(isset($_POST["update"] )){
+
+            if(empty($_POST["pwd"])){
+                $pwd = $_POST["oldpwd"];
+            }
+            else{
+                $pwd =$_POST["pwd"];
+            }
+
+            if(empty($_POST["phone"])){
+                $phone = $_POST["oldphone"];
+            }
+            else{
+                $phone =$_POST["phone"];
+            }
+            $data = [
+                            "fname" => $_POST["fname"],
+                            "lname" => $_POST["lname"],
+                            "pwd" => PASSWORD_HASH($pwd, PASSWORD_DEFAULT),
+                            "email" => $_POST["email"],
+                            "phone" => $phone,
+                        ];
+
+                        var_dump($data);
+
+                        if($this->jobModel->update($data)){
+                            $_SESSION["status"] = "Your info has been updated";
+                            redirect("pages/designer_profile");
+                        }
         }
     }
 

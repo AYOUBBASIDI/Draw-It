@@ -49,8 +49,6 @@ class Pages extends controller
                  'job_complete' => $job_complete,
             ];
         $this-> view('client/profile' , $data);
-        }else{
-            var_dump($user) ;
         }
     }
     public function details($id){
@@ -122,7 +120,7 @@ class Pages extends controller
                  'requests' => $requests,
                  'accepted' => $accepted,
             ];    
-            // var_dump($data["accepted"]);
+            // var_dump($data["requests"]);
             // die();
                 $this-> view('designer/dashboard' ,$data);
             
@@ -136,13 +134,22 @@ class Pages extends controller
     }
     public function request_job($id){
         $job = $this->jobModel->getJobById($id);
+        $exist = $this->jobModel->ifExist($id);
+            $data = [
+                 'job' => $job,
+                 "exist" => $exist,
+            ];
+            // echo $exist;
+        $this-> view('designer/request' , $data);
+    }
+    public function details_job($id){
+        $job = $this->jobModel->getJobById($id);
             $data = [
                  'job' => $job
             ];
-        $this-> view('designer/request' , $data);
-    }
-    public function details_job(){
-        $this-> view('designer/details');
+            // var_dump($data["job"]);
+        $this-> view('designer/details' , $data);
+
     }
     public function review(){
         $this-> view('designer/review');
@@ -165,6 +172,9 @@ class Pages extends controller
     public function googleapi(){
         $this-> view('pages/googleapi');
     }
+    public function page404(){
+        $this-> view('pages/404');
+    }
     
 
 
@@ -186,6 +196,6 @@ class Pages extends controller
        ];    
         $this-> view('admin/home' ,$data);
     }
-
+    
 
 }

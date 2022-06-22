@@ -153,7 +153,7 @@
     background-color: #40096E;
     width: 50%;
     margin-left: 32%;
-    border-radius: 5px;
+    border-radius: 20px;
     position: absolute;
     top: 7%;
     width: 40%;
@@ -184,7 +184,7 @@
     background-color: #40096E;
     width: 50%;
     margin-left: 32%;
-    border-radius: 5px;
+    border-radius: 20px;
     position: absolute;
     top: 7%;
     width: 40%;
@@ -300,7 +300,17 @@
   .mar {
     margin-left: 3.5%;
   }
-  /*# sourceMappingURL=style.css.map */
+
+  .pp{
+    text-decoration: none;
+    color:white;
+  }
+
+
+
+
+  
+
 
   @media only screen and (max-width: 600px) {
     .homePage{

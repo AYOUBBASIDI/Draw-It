@@ -15,7 +15,7 @@
         <div class="choice-row2"><input type="email" placeholder="E-mail Address" name="email" required/></div>
         <div class="choice-row2"><input type="password" placeholder="password" name="pwd" required/></div>
         <input type="hidden" name="role" value="designer"/>
-        <div class="choice-row3"><input class="choice-check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, including the User Agreement and Privacy Policy.</p></div>
+        <div class="choice-row3"><input class="choice-check" type="checkbox" name="rules" required/><p>Yes, I understand and agree to the DrawIt Terms of Service, including the User Agreement and  <a class="pp" href="https://www.privacypolicygenerator.info/live.php?token=3VRv6K7ozYOyn04DZmTCZ82FEoDdrrup">Privacy Policy</a>.</p></div>
         <div class="choice-btn"><button class="choice-signup" type="submit" name="adddesigner">Create My Account</button>
         </form>
         <div class="choice-log"><p>Already have an account ?</p><a href="<?php echo URLROOT; ?>pages/login">Log In </a><div>

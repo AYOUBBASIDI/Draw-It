@@ -145,3 +145,14 @@
     justify-content: space-between;
   }
 
+
+  @media only screen and (max-width: 600px) {
+  .file-rendu {
+      width: 98%;
+  }
+  .message textarea{
+    min-width: 205%;
+    margin-left: -60%;
+    margin-top: 5%;
+  }
+}

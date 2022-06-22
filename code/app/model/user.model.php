@@ -9,14 +9,27 @@ class user extends database
 
     public function addclient($data)
     {
+        $this->db->query("SELECT * FROM users WHERE email=:email");
+        $this->db->bind(":email", $data["email"]);
+        $user = $this->db->fetch();
+        if($user == null){
         $this->db->query("INSERT INTO users (fname,lname,email,pwd,role,situation) VALUES (:fname,:lname,:email,:pwd,:role,'0')");
         $this->db->bind(":fname", $data["fname"]);
         $this->db->bind(":lname", $data["lname"]);
         $this->db->bind(":email", $data["email"]);
         $this->db->bind(":pwd", $data["pwd"]);
         $this->db->bind(":role", $data["role"]);
-        // $this->db->execute();
-        return $this->db->execute();
+        $this->db->execute();
+        $result = "add";
+        }else{
+        $result = "exist";
+        // var_dump ($user);
+        }
+        return $result;
+
+
+        // die();
+
     }
     public function addfreelancer($data)
     {

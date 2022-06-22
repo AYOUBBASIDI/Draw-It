@@ -1,3 +1,9 @@
+<?php if($_SESSION['id'] == null){
+    redirect("pages/index");
+}else{
+?>
+
+
 <?php include APPROOT . '/view/include-designer/header.php'; ?>
 
 <div class="dashboard-client">
@@ -22,14 +28,19 @@
             foreach ($data["jobs"] as $job){     
          ?>
         <div class="posted-job">
-            <p><?php echo $job->fname;?> <?php echo $job->lname; ?></p>
-            <p> <?php echo $job->description; ?></p>
-            <p>Type :  <?php echo $job->type; ?></p>
-            <p>Max Time :  <?php echo $job->delay; ?> </p>
-            <p> <?php echo $job->price; ?> $</p>
-            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/request_job/<?php echo $job->id_job; ?>">See More</a></p>
+            <p><em>Client</em> : <?php echo $job->fname;?> <?php echo $job->lname; ?></p>
+            <p> - <?php echo $job->description_sh; ?></p>
+            <p><em>Type :</em>  <?php echo $job->type_sh; ?></p>
+            <p><em>Delay :</em>  <?php echo $job->delay_sh; ?> </p>
+            <p><em>Color :</em>  <?php echo $job->favcolor_sh; ?> </p>
+            <div class="seemore">
+                <div class="content-seemore">
+                  <div class="prix"><p><?php echo $job->price_sh; ?> $</p></div> 
+                  <a href = "<?php echo URLROOT; ?>pages/request_job/<?php echo $job->id_job_sh; ?>" class="btn btn-2">Submit a request</a>
+                </div>
+                <p class="see">See More</p>
+            </div>
         </div>
-
     <?php }}?>
     </div>
 </div>
@@ -41,16 +52,22 @@
     <div class="accepted-job-content">
     <?php
     if (isset($data["accepted"])){
-        // echo "hello";
             foreach ($data["accepted"] as $item){     
          ?>
+        <div class="forreject" >
         <div class="job-accept">
             <p class="first-row"><?php echo $item->fname;?> <?php echo $item->lname; ?></p>
             <p class="second-row">Type : <?php echo $item->type;?></p>
             <p class="second-row">Max Time : <?php echo $item->delay;?></p>
             <a href="<?php echo URLROOT; ?>pages/submit_rendu/<?php echo $item->id_job;?>"><img class="icon-download" src="<?php echo URLROOT ?>img/rendu.png" ></a>
         </div>
-        <?php } }?>
+        </div>
+        <?php 
+        if( $item->rejected == 1){
+        ?>
+        <p class="reject">rejected</p></div>
+
+        <?php }}} ?>
     </div>
 </div>
 
@@ -63,15 +80,23 @@
             foreach ($data["requests"] as $request){  
          ?>
             <div class="posted-job">
-                <p><?php echo $request->fname ?> <?php echo $request->lname ?></p>
-                <p><?php echo $request->description ?></p>
-                <p>Type : <?php echo $request->type ?></p>
-                <p>Max Time : <?php echo $request->delay ?> </p>
-                <p><?php echo $request->price ?> $</p>
-                <p class="see-more"><a href="<?php echo URLROOT; ?>pages/details_job">See More</a></p>
+            <p><em>Client</em> : <?php echo $job->fname;?> <?php echo $job->lname; ?></p>
+            <p> - <?php echo $request->description_sh; ?></p>
+            <p><em>Type :</em>  <?php echo $request->type_sh; ?></p>
+            <p><em>Max Time :</em>  <?php echo $request->delay_sh; ?> </p>
+            <p><em>Color :</em>  <?php echo $job->favcolor_sh; ?> </p>
+            <div class="seemore">
+                <div class="content-seemore">
+                  <div class="prix"><p><?php echo $job->price_sh; ?> $</p></div> 
+                  <a href = "<?php echo URLROOT; ?>pages/details_job/<?php echo $job->id_job_sh; ?>" class="btn btn-2">Submit a request</a>
+                </div>
+                <p class="see">See More</p>
             </div>
+            <!-- <div class="price"><img src="<?php echo URLROOT ?>img/price.png"><p> <?php echo $request->price_sh; ?> $</p></div>
+            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/details_job/<?php echo $job->id_job_sh; ?>">See More</a></p> -->
+        </div>
 
-            <?php }} ?>
+            <?php }}else ?>
         </div>
 </div>
 </div>
@@ -112,4 +137,26 @@
         btn3_menu.style="background-color: #F3A1FF;";
     }
 }
+
+// let test = document.getElementsByClassName("posted-job")[];
+
+// test.addEventListener("mouseenter", function( event ) {
+//   event.target.style.color = "purple";
+// }, false);
+
+// Ce gestionnaire sera exécuté à chaque fois que le curseur
+// se déplacera sur un autre élément de la liste
+// test.addEventListener("mouseover", function( event ) {
+//   // on met l'accent sur la cible de mouseover
+//   event.target.style.color = "orange";
+
+// }, false);
+
+// function seemore(event){
+    
+// }
+
 </script>
+
+
+<?php } ?>

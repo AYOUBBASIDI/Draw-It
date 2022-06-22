@@ -44,3 +44,15 @@
 .notif img{
     width: 82%;
 }
+.no{
+    display:flex;
+    justify-content: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+.no{
+    margin-left: 1%;
+    width: 90%;
+}
+}

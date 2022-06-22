@@ -109,3 +109,21 @@
     position: relative;
 }
 
+
+@media only screen and (max-width: 600px) {
+
+.newjob-content form {
+    width: 99%;
+    margin-left: 0%;
+    margin-top: 12%;
+}
+.some{
+    font-size: 13px;
+}
+
+.newjob-content h1{
+    margin-top: 20%;
+    font-size: 25px;
+}
+
+}

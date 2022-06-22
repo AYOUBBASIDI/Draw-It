@@ -159,6 +159,122 @@
   display:flex;
   justify-content: center;
 }
+.fname ,.lname{
+  width: 49%;
+    font-size: 16px;
+    font-family: "Itim", cursive;
+    border: none;
+    background: none;
+    color: #40096E;
+    font-weight: bold;
+    outline: none;
+}
+
+.lname{
+  margin-left:4%;
+}
+.input{
+  width:100%;
+  border: none;
+  background: none;
+  color: #40096E;
+  font-weight: bold;
+  font-family: "Itim", cursive;
+  font-size: 16px;
+  outline: none;
+}
+
+.inputs div{
+  display: flex;
+  height: 55px;
+  align-items: center;
+}
+
+.update{
+  display:none;
+}
+.btn_update{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  width: 94%;
+}
+
+.update_btn{
+  border: solid 3px #F3A1FF;
+  border-radius: 20px;
+  width: 48%;
+  height: 40px;
+  background: #F3A1FF;
+  color: #40096E;
+  margin-top: 5%;
+  cursor:pointer;
+  font-family: "Itim", cursive;
+}
+/* .update_btn:hover{
+  background: #F3A1FF;
+  color: #40096E;
+} */
+
+.cancel_btn{
+  border: solid 3px #F3A1FF;
+  border-radius: 20px;
+  width: 48%;
+  height: 40px;
+  background: none;
+  color: #F3A1FF;
+  margin-top: 5%;
+  cursor:pointer;
+  font-family: "Itim", cursive;
+}
+.cancel_btn:hover{
+  background: #F3A1FF;
+  color: #40096E;
+}
+.div{
+  background: #40096E;
+    width: 1px;
+    height: 60%;
+}
+.icon_update{
+  background: #f9cdff;
+  border-radius: 100px;
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  left: 24%;
+  top: 82%;
+  border: solid 5px #2d0659;
+  cursor:pointer;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon_update a{
+width: 30px;
+    height: 30px;
+}
+.icon_update img{
+  width: 100%;
+}
+.icon_update a:hover{
+  width: 33px;
+  margin-top: -2px;
+}
+
+  .status_profile{
+    color: #f4b1ff;
+    border-radius: 10px;
+    border: 2px solid;
+    padding: 10px;
+    width: 91.5%;
+    top: 10%;
+    margin-left: 3%;
+    font-family: "Itim", cursive;
+    position: absolute;
+  }
+
 
 @media only screen and (max-width: 600px) {
   .menu {

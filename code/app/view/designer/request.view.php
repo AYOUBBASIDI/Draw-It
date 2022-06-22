@@ -28,7 +28,11 @@ if (isset($data["job"])){
         <div class="line">
         <label for="Price">Price :</label>
         <p class="line-content"><?php echo $item->price_sh; ?></p>
+        <?php if($data["exist"] == 0){ ?>
         <button class="submit-job btn-request" onclick="request()">Request</button>
+        <?php }else{ ?>
+            <button class="submit-job btn-request disable" onclick="request()" disabled>Request</button>
+        <?php } ?>
         </div>   
         <?php }} ?>
     </div>

@@ -19,7 +19,7 @@
         <form action="<?php echo URLROOT; ?>users/login" method="post">
         <div class="row"><input type="email" placeholder="E-mail Address" name="email" required/></div>
         <div class="row"><input type="password" placeholder="password" name="pwd" required/></div>
-        <div class="btnForm"><button class="log" type="submit" name="login"><a>Log In</a></button>
+        <div class="btnForm"><button class="log" type="submit" name="login" onclick="fire()">Log In</button>
         <p>Don't have an Account</p>
         
         </form>
@@ -27,20 +27,23 @@
     </div>
 </body>
 
-<!-- <script>
-    var session = <?php 
-    // echo $_SESSION["alert"]
-     ?>;
+<script>
+    var session = <?php echo $_SESSION['alert']; ?> 
 
-    if(session == true){
-        alert("Your account has been craeated seccessfuly , Welcome !");
+    if(session == 1){
+        swal({
+            title: "User created!",
+            text: "Your a ccount has been created succesfuly!!",
+            icon: "success",
+            button: "Ok",
+        });
     }else{
         console.log(session);
     }
     <?php 
-    // $_SESSION['alert'] = null;
+    $_SESSION['alert'] = null;
      ?>
-</script> -->
+</script>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
@@ -53,5 +56,29 @@
             s1.setAttribute('crossorigin','*');
             s0.parentNode.insertBefore(s1,s0);
             })();
+
+
+            // function fire(){ 
+            //     swal({
+            // title: "Are you sure!",
+            // text: "Do you really want to remove user!",
+            // icon: "warning",
+            // buttons: true,
+            // dangerMode: true,
+        // })
+        //.then((willDelete) => {
+        //     if (willDelete) {
+        //         swal("Yaa! User successfully deleted!", {
+        //             icon: "success",
+        //         });
+        //     } else {
+        //         swal("User not deleted your user is safe!", {
+        //             icon: "error",
+        //         });
+        //     }
+        // })
+        // ;
+        
+            // }
         </script>
     <!--End of Tawk.to Script-->

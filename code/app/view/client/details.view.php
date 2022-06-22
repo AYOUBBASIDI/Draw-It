@@ -11,23 +11,23 @@
     <div class="details">
         <div class="line">
         <label for="type">Type :</label>
-        <p class="line-content"><?php echo $item->type; ?></p>
+        <p class="line-content"><?php echo $item->type_sh; ?></p>
         </div>  
         <div class="">
         <label for="Details">Details :</label><br/>
-        <p><?php echo $item->description; ?></p>
+        <p><?php echo $item->description_sh; ?></p>
         </div>  
         <div class="line">
         <label for="type">Max time :</label>
-        <p class="line-content"><?php echo $item->delay; ?> hour (s)</p>
+        <p class="line-content"><?php echo $item->delay_sh; ?> hour (s)</p>
         </div>  
         <div class="">
         <label for="Color">Color :</label>
-        <p><?php echo $item->favcolor; ?></p>
+        <p><?php echo $item->favcolor_sh; ?></p>
         </div>  
         <div class="line">
         <label for="Price">Price :</label>
-        <p class="line-content"><?php echo $item->price; ?> $</p>
+        <p class="line-content"><?php echo $item->price_sh; ?> $</p>
         </div>   
         <?php }}?>
     </div>

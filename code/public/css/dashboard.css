@@ -131,7 +131,7 @@ nav{
 }
 .all-rendred{
     margin-top: 3%;
-    overflow-y: scroll;
+    overflow-y: auto;
     max-height: 338px;
 }
 .jobs{
@@ -234,11 +234,16 @@ nav{
     border: solid 2px;
     padding: 0 10px;
     width: 30%;
+    height: 48%;
     position: relative;
     color: white;
     font-family: "Itim", cursive;
     border-radius: 8px;
     margin-top: 2%;
+}
+.posted-job em{
+    color:#F3A1FF;
+    font-weight:bold;
 }
 .see-more{
     position: absolute;
@@ -378,6 +383,34 @@ option:hover{
     margin-left: 3%;
     font-family: "Itim", cursive;
   }
+  .forreject{
+    position:relative;
+  }
+  .reject{
+      position:absolute;
+      top :1%;
+      right: 2%;
+      color:red;
+      font-family: "Itim", cursive;
+  }
+
+  .price{
+    position: absolute;
+    top: 0px;
+    right: 0%;
+  }
+  .price img{
+    width: 68px;
+  }
+  .price p{
+    position: absolute;
+    top: 11px;
+    right: 20px;
+    transform: rotate(315deg);
+    color: #280657;
+    font-weight: bold;
+  }
+  
 
   @media only screen and (max-width: 600px) {
       .posted-job{
@@ -388,6 +421,7 @@ option:hover{
       }
       .content-alljobs {
         height: 655px;
+        align-content: flex-start;
       }
       .dashborad-menu-client {
         margin-top: 8%;
@@ -399,5 +433,135 @@ option:hover{
       .txt-btn{
           font-size:13px;
       }
+
+      .rendred-menu-btn,.jobs-menu-btn {
+        height: 30px;
+      }
+
+      .dashborad-menu {
+        width: 55%;
+        margin-top: 10%;
+
+      }
+
+      .all-rendred {
+        margin-top: 5%;
+      }
+      .rendred{
+        font-size: 9px;
+        margin-left: 0%;
+      }
+      .icon-download, .icon-denied, .icon-delete {
+        width: 20px;
+    }
+    .icon-accept {
+        width: 25px;
+    }
+    .newjob{
+        font-size: 12px;
+        top: 13%;
+        right: 4%;
+    }
+    .newjob a{
+        width: 110px;
+    }
+
+    .accepted-job-content {
+        margin-top: 5%;
+    }
+    .job-accept {
+        font-size: 10px;
+    }
+    .job-accept{
+        width: 88%;
+        margin-left: 2%;
+      }
+
+      .requestAjob {
+        margin-top: 15% !important;
+    }
+
+    .btn-request {
+        margin-left: 56% !important;
+    }
+
+    .content-alljobs-waiting{
+        height: 657px;
+        margin-top: 5%;
+    }
+    .status{
+        width: 85%;
+    }
+
   }
+  .seemore{
+    display:none;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: #f2a0fe;
+    width: 10%;
+    height: 100%;
+    transition: width 0.5s;
+    color: black;
+    border-radius: 0 5px 5px 0;
+  }
+  .seemore:hover{
+    width:100%;
+    border-radius:5px;
+  }
+
+  .posted-job:hover .seemore{
+    display:block;
+}
+.seemore .see{
+    transform: rotate(270deg);
+    width: 75px;
+    margin-top: 87px;
+    margin-left: -20px;
+}
+.content-seemore{
+    display:none;
+}
+.content-seemore a
+{
+    text-decoration: none;
+    color: #250555;
+    font-family: "Itim", cursive;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    left: 29%;
+}
+.content-seemore a:hover
+{
+    text-decoration: underline;
+}
+
+.seemore:hover .content-seemore{
+    display:block;
+  }
+
+.seemore:hover .see{
+    display:none;
+}
+
+  .prix{
+    background: #260556;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    right: 1%;
+    top: 2%;
+  }
+
+
+/* .posted-job:hover p{
+    d
+} */
 

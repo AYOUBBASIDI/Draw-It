@@ -152,7 +152,43 @@
   }
   .message textarea{
     min-width: 205%;
-    margin-left: -60%;
     margin-top: 5%;
   }
+  .test-content {
+    margin-left: 1%;
+}
+.btn-test {
+margin-left: 17%;
+width: 70%;
+}
+.description {
+  max-width: 90%;
+  padding: 2% 3%;
+  margin-top: 2%;
+}
+.log-out-single {
+width: 73%;
+margin-top: 5%;
+margin-left: 28%;
+}
+.btn-test-content ,.btn-rendered{
+  width: 45%;
+}
+.test-page{
+  height: 98vh;
+}
+.rendu-content{
+  flex-wrap: wrap;
+}
+.btn-operation {
+  width: 90%;
+  margin-top: 3%;
+}
+.log-out{
+  width: 30%;
+  margin-left: 35%;
+}
+.change-test{
+  width: 30%;
+}
 }

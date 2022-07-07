@@ -57,28 +57,5 @@
             s0.parentNode.insertBefore(s1,s0);
             })();
 
-
-            // function fire(){ 
-            //     swal({
-            // title: "Are you sure!",
-            // text: "Do you really want to remove user!",
-            // icon: "warning",
-            // buttons: true,
-            // dangerMode: true,
-        // })
-        //.then((willDelete) => {
-        //     if (willDelete) {
-        //         swal("Yaa! User successfully deleted!", {
-        //             icon: "success",
-        //         });
-        //     } else {
-        //         swal("User not deleted your user is safe!", {
-        //             icon: "error",
-        //         });
-        //     }
-        // })
-        // ;
-        
-            // }
         </script>
     <!--End of Tawk.to Script-->

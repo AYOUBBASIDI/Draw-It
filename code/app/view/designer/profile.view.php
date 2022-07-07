@@ -69,16 +69,20 @@
             </div>
             <div class="single-jobs">
             <?php 
-            if (isset($data["job_complete"])){
+            if (!empty($data["job_complete"])){
             $i=1;
-            foreach ($data["job_complete"] as $item){  ?>
+            foreach ($data["job_complete"] as $item){ 
+                ?>
                 <div class="job">
                     <p># <?php echo $i++;  ?></p>
                     <p><?php echo $item->type; ?></p>
                     <p><?php echo $item->price; ?> $</p>
                 </div>
-                <?php }}?>
-                    
+                <?php  }}else{ ?> 
+                    <div class="no job">
+                    <p>You dont have a completed job</p>
+                </div>
+                    <?php } ?>
             <div>
         </div>
     </div>

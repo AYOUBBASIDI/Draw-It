@@ -75,3 +75,12 @@
   .for_login a:hover{
     color: #fff;
   }
+
+
+  @media only screen and (max-width: 600px) {
+    .signup-content {
+      width: 123%;
+      margin-left:0%;
+    }
+
+  }

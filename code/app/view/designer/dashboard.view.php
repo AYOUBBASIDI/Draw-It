@@ -15,7 +15,7 @@
          ?>
 
 <div class="dashborad-menu-client">
-        <button class="all_jobs_menu_btn_client" type="submit" onclick="action('all')"><a class="txt-btn">All rendered</a></button>
+        <button class="all_jobs_menu_btn_client" type="submit" onclick="action('all')"><a class="txt-btn">All Jobs</a></button>
         <button class="accepted_jobs_menu_btn_client" type="submit" onclick="action('accepted')"><a class="txt-btn">Accepted Jobs</a></button>
         <button class="waiting_jobs_menu_btn_client" type="submit" onclick="action('waiting')"><a class="txt-btn">Jobs Waiting</a></button>
     </div>
@@ -29,7 +29,7 @@
          ?>
         <div class="posted-job">
             <p><em>Client</em> : <?php echo $job->fname;?> <?php echo $job->lname; ?></p>
-            <p> - <?php echo $job->description_sh; ?></p>
+            <p class="desdiv"> - <?php echo $job->description_sh; ?></p>
             <p><em>Type :</em>  <?php echo $job->type_sh; ?></p>
             <p><em>Delay :</em>  <?php echo $job->delay_sh; ?> </p>
             <p><em>Color :</em>  <?php echo $job->favcolor_sh; ?> </p>
@@ -80,20 +80,18 @@
             foreach ($data["requests"] as $request){  
          ?>
             <div class="posted-job">
-            <p><em>Client</em> : <?php echo $job->fname;?> <?php echo $job->lname; ?></p>
-            <p> - <?php echo $request->description_sh; ?></p>
+            <p><em>Client</em> : <?php echo $request->fname;?> <?php echo $request->lname; ?></p>
+            <p class="desdiv"> - <?php echo $request->description_sh; ?></p>
             <p><em>Type :</em>  <?php echo $request->type_sh; ?></p>
             <p><em>Max Time :</em>  <?php echo $request->delay_sh; ?> </p>
-            <p><em>Color :</em>  <?php echo $job->favcolor_sh; ?> </p>
+            <p><em>Color :</em>  <?php echo $request->favcolor_sh; ?> </p>
             <div class="seemore">
                 <div class="content-seemore">
-                  <div class="prix"><p><?php echo $job->price_sh; ?> $</p></div> 
-                  <a href = "<?php echo URLROOT; ?>pages/details_job/<?php echo $job->id_job_sh; ?>" class="btn btn-2">Submit a request</a>
+                  <div class="prix"><p><?php echo $request->price_sh; ?> $</p></div> 
+                  <a style="top: 45%;left: 36%;" href = "<?php echo URLROOT; ?>pages/details_job/<?php echo $request->id_job_sh; ?>" class="btn btn-2">See Details</a>
                 </div>
                 <p class="see">See More</p>
             </div>
-            <!-- <div class="price"><img src="<?php echo URLROOT ?>img/price.png"><p> <?php echo $request->price_sh; ?> $</p></div>
-            <p class="see-more"><a href="<?php echo URLROOT; ?>pages/details_job/<?php echo $job->id_job_sh; ?>">See More</a></p> -->
         </div>
 
             <?php }}else ?>

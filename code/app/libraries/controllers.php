@@ -10,11 +10,9 @@ class controller
     }
 
     public function view($view, $data = []){
-        
         if(file_exists('../app/view/' . $view . '.view.php')){
             require_once '../app/view/' . $view . '.view.php';
         } else {
-        
             die("View n'existe pas");
         }
     }

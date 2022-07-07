@@ -1,5 +1,5 @@
 <?php
-
+//controller file for admin
 class admins extends controller
 {
     public function __construct()
@@ -7,8 +7,10 @@ class admins extends controller
         $this->adminModel = $this->model('admin');
     }
 
+//admin can add a test here
     public function add_test(){
-        if(isset($_POST["submit"] )){
+        if(isset($_POST["submit"] ))
+        {
             $data = [
                             "title" => $_POST["title"],
                             "slug" => $_POST["slug"],
@@ -16,37 +18,43 @@ class admins extends controller
                             "genre" => $_POST["genre"],
                             "description" => $_POST["description"],
                         ];
-                        if($this->adminModel->addtest($data)){
-                            redirect("pages/adminHome", $data);
-                        }
+            if($this->adminModel->addtest($data)){
+                redirect("pages/adminHome", $data);
             }
-    }
-    public function submit_test(){
-        if(isset($_POST["test_submit"])){
-                $name_file = $_FILES['rendu']['name'];
-                $tmp_name = $_FILES['rendu']['tmp_name'];
-                $local_image = '../public/local_images/';
-                $upload = move_uploaded_file($tmp_name,$local_image.$name_file);
-                if($upload){
-                    $data = [
-                        "message" => $_POST["message"],
-                        "rendu" => $name_file,
-                    ];
-                    if($this->adminModel->submitTest($data)){
-                        redirect("users/review");
-                        // echo "final ";
-                    }
-                }
-            
         }
     }
-    public function upload($name)
+
+//rendu test
+    public function submit_test(){
+        if(isset($_POST["test_submit"]))
+        {
+            $name_file = $_FILES['rendu']['name'];
+            $tmp_name = $_FILES['rendu']['tmp_name'];
+            $local_image = '../public/local_images/';
+            $upload = move_uploaded_file($tmp_name,$local_image.$name_file);
+            if($upload)
+            {
+                $data = [
+                    "message" => $_POST["message"],
+                    "rendu" => $name_file,
+                ];
+                if($this->adminModel->submitTest($data))
+                {
+                    redirect("users/review");
+                }
+            } 
+        }
+    }
+
+//download file format pdf
+    public function download($name)
     {
         if(!empty($name))
         {
             $filename = basename($name);
             $filepath = '../public/local_images/' . $filename;
-            if (!empty($filename) && file_exists($filepath)){
+            if (!empty($filename) && file_exists($filepath))
+            {
                 header('Content-Description: File Transfer');
                 header('Content-Type: application/pdf');
                 header("Cache-Control: no-cache, must-revalidate");
@@ -64,21 +72,27 @@ class admins extends controller
         }
     }
 
+//to accept and reject a designer
     public function accept_designer($id_user , $id_rendu)
     {
-        if ($this->adminModel->accept_dsigner($id_user , $id_rendu)){
+        if ($this->adminModel->accept_dsigner($id_user , $id_rendu))
+        {
             redirect('pages/adminHome');
         }
     }
     public function reject_designer($id_user , $id_rendu)
     {
-        if ($this->adminModel->reject_dsigner($id_user , $id_rendu)){
+        if ($this->adminModel->reject_dsigner($id_user , $id_rendu))
+        {
             redirect('pages/adminHome');
         }
     }
 
-    public function delete_user($id){
-        if ($this->adminModel->delete_user($id)){
+//to delete user
+    public function delete_user($id)
+    {
+        if ($this->adminModel->delete_user($id))
+        {
             redirect('pages/adminHome');
         }
     }

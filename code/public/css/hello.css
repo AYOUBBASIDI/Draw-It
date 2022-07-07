@@ -55,3 +55,13 @@ nav img {
     text-decoration: none;
     color:#40096E;
   }
+
+  @media only screen and (max-width: 600px) {
+  .btn1, .btn2{
+    width: 33%;
+  }
+  nav img {
+    width: 26% !important;
+    margin-top: 4% !important;
+  }
+}

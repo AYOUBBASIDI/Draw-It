@@ -88,3 +88,13 @@
     text-decoration: underline;
     color:white;
   }
+
+  @media only screen and (max-width: 600px) {
+    .choice-content {
+      width: 97%;
+      left: 2%;
+    }
+    .choicePage{
+      height: 98vh;
+    }
+  }

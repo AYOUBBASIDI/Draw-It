@@ -1,4 +1,5 @@
 <?php
+//here we found all pages 
 class Pages extends controller
 {
     public function __construct()
@@ -8,63 +9,83 @@ class Pages extends controller
         $this->adminModel = $this->model('admin');
         $this->moneyModel = $this->model('money');
     }
+
     public function index()
     {
        $this-> view('pages/home');
     }
+
     public function login()
     {
         $this-> view('pages/login');
     }
+
     public function signup()
     {
         $this-> view('pages/signup');
     }
+
     public function asClient()
     {
         $this-> view('pages/asclient');
     }
+
     public function asdesigner()
     {
         $this-> view('pages/asFreelancer');
     }
-    public function hello_Client(){
+
+    public function hello_Client()
+    {
         $this-> view('client/hello');
     }
-    public function client_dashboard(){
+
+    public function client_dashboard()
+    {
+        //get jobs and rendu
         $jobs = $this->jobModel->getjobs();
         $rendu = $this->jobModel->getrendus();
-            $data = [
-                 'jobs' => $jobs,
-                 'rendu' => $rendu,
-            ];
+        $data = [
+                'jobs' => $jobs,
+                'rendu' => $rendu,
+        ];
         $this->view('client/dashboard', $data);
     }
-    public function client_profile(){
+
+    public function client_profile()
+    {
+        //get user info and completed jobs
         $user = $this->userModel->getUserById();
         $job_complete = $this->jobModel->getCompletedJobs();
-        if($user){
+        if($user)
+        {
             $data = [
-                 'user' => $user,
-                 'job_complete' => $job_complete,
+                'user' => $user,
+                'job_complete' => $job_complete,
             ];
-        $this-> view('client/profile' , $data);
+            $this-> view('client/profile' , $data);
         }
     }
-    public function details($id){
+
+    public function details($id)
+    {
+        //get details of job by id
         $job = $this->jobModel->getJobById($id);
         if($job){
             $data = [
                  'job' => $job
             ];
-        $this-> view('client/details' , $data);
+            $this-> view('client/details' , $data);
         }
     }
-    public function new_job(){
+
+    public function new_job()
+    {
         $this-> view('client/newjob');
     }
-    public function job_create(){
 
+    public function job_create()
+    {
         $data = [
             "type" => $_POST["type"],
             "favcolor" => $_POST["favcolor"],
@@ -74,104 +95,131 @@ class Pages extends controller
         ];
         $this-> view('client/jobinfo' , $data);
     }
-    public function requests($id){
+
+    public function requests($id)
+    {
         $request = $this->jobModel->getRequestsById($id);
-            $data = [
+        $data = [
                  'request' => $request
-            ];
+        ];
         $this-> view('client/requests' , $data);
     }
-    public function deposit(){
+
+    public function deposit()
+    {
         $request = $this->moneyModel->for_money_page();
         $data = [
             'request' => $request
-       ];   
+        ];   
         $this-> view('client/deposit', $data);
     }
-    public function asFreelancer(){
+
+    public function asFreelancer()
+    {
         $this-> view('designer/hello');
     }
-    public function test(){
-        $test = $this->adminModel->getRandomTest();
+
+    public function test()
+    {
+        //get test for designer
+        $test = $this->adminModel->getTest();
         $data = [
             'test' => $test
         ];
         $this-> view('designer/test', $data);
     }
+
     public function thank(){
         $this-> view('designer/thank_you');
     }
-    public function designer_profile(){
+
+    public function designer_profile()
+    {
+        //get info user and completed jobs
         $user = $this->userModel->getUserById();
         $job_complete = $this->jobModel->getCompletedJobs();
-            $data = [
+        $data = [
                  'user' => $user,
                  'job_complete' => $job_complete,
-            ];
+        ];
         $this-> view('designer/profile' , $data);
     }
-    public function designer_dashboard(){
+
+    public function designer_dashboard()
+    {
+        //get requests and jobs and accepted job for designer
         $requests = $this->jobModel->getrequests();
         $jobs = $this->jobModel->getAlljobs();
-        $accepted = $this->jobModel->getAllAccept();
-        
-            $data = [
-                 'jobs' => $jobs,
-                 'requests' => $requests,
-                 'accepted' => $accepted,
-            ];    
-            // var_dump($data["requests"]);
-            // die();
-                $this-> view('designer/dashboard' ,$data);
-            
+        $accepted = $this->jobModel->getAllAccept();   
+        $data = [
+                'jobs' => $jobs,
+                'requests' => $requests,
+                'accepted' => $accepted,
+        ];    
+        $this-> view('designer/dashboard' ,$data);   
     }
-    public function withdraw(){
+
+    public function withdraw()
+    {
         $wallet = $this->moneyModel->for_money_page();
         $data = [
             'wallet' => $wallet,
        ];   
         $this-> view('designer/withdraw',$data);
     }
-    public function request_job($id){
+
+    public function request_job($id)
+    {
         $job = $this->jobModel->getJobById($id);
         $exist = $this->jobModel->ifExist($id);
-            $data = [
-                 'job' => $job,
-                 "exist" => $exist,
-            ];
-            // echo $exist;
+        $data = [
+                'job' => $job,
+                "exist" => $exist,
+        ];
         $this-> view('designer/request' , $data);
     }
-    public function details_job($id){
-        $job = $this->jobModel->getJobById($id);
-            $data = [
-                 'job' => $job
-            ];
-            // var_dump($data["job"]);
-        $this-> view('designer/details' , $data);
 
+    public function details_job($id)
+    {
+        $job = $this->jobModel->getJobById($id);
+        $data = [
+                'job' => $job
+        ];
+        $this-> view('designer/details' , $data);
     }
-    public function review(){
+
+    public function review()
+    {
         $this-> view('designer/review');
     }
-    public function submit_rendu($id){
+
+    public function submit_rendu($id)
+    {
         $job = $this->jobModel->getJobById($id);
-        if($job){
+        if($job)
+        {
             $data = [
-                 'job' => $job
+                    'job' => $job
             ];
-        $this-> view('designer/rendu', $data);
+            $this-> view('designer/rendu', $data);
         }
     }
-    public function accepted(){
+
+    public function accepted()
+    {
         $this-> view('designer/accepted');
     }
-    public function rejected(){
+
+    public function rejected()
+    {
         $this-> view('designer/rejected');
     }
-    public function googleapi(){
+
+    public function googleapi()
+    {
         $this-> view('pages/googleapi');
     }
+
     public function page404(){
         $this-> view('pages/404');
     }

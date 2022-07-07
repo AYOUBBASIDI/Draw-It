@@ -335,6 +335,16 @@ width: 30px;
   .head-jobs{
     font-size: 15px;
   }
+  .info-profile {
+    height: 235px;
+  }
+  .icon_update {
+    left: 74%;
+    top: 54%;
+  }
+  .single-jobs {
+    height: 207px;
+}
 }
 
 

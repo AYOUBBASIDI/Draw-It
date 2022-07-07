@@ -13,7 +13,6 @@ class core
 
         if (isset($url[0])) {
             if (file_exists('../app/controller/' . $url[0] . '.controller.php')) {
-
                 $this->controller = $url[0];
                 unset($url[0]);
             }
@@ -48,7 +47,6 @@ class core
             $url = filter_var($url, FILTER_SANITIZE_URL);
             $url = rtrim($url, '/');
             $url = explode('/', $url);
-
             return $url;
         }
     }

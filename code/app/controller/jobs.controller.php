@@ -7,10 +7,12 @@ class jobs extends controller
         $this->jobModel = $this->model('job');
     }
 
+//to add new job
     public function newjob()
     {
         
-        if(isset($_POST["addjob"] )){
+        if(isset($_POST["addjob"] ))
+        {
             $data = [
                             "type" => $_POST["type"],
                             "favcolor" => $_POST["favcolor"],
@@ -19,43 +21,41 @@ class jobs extends controller
                             "description" => $_POST["description"],
                             "creator" => $_POST["name"],
                         ];
-
-                        if($this->jobModel->addjob($data)){
+                        if($this->jobModel->addjob($data))
+                        {
                             $_SESSION["status"] = "Job has been created";
                             redirect("pages/client_dashboard", $data);
                         }
         }
     }
 
-    public function new_request($id){
+//to send a request
+    public function new_request($id)
+    {
         $data = [
             "id" => $id,
         ];
-        if($this->jobModel->addrequest($data)){
+        if($this->jobModel->addrequest($data))
+        {
             $_SESSION["status"] = "the request has been sent";
             redirect("pages/designer_dashboard");
         }
     }
 
+//to accept or rejected a job
     public function acceptJob($user,$name,$job,$request,$price){
-        // echo $request;
-        // die();
         $data = [
-                            "job_accepted" => $job,
-                            "user_accepted" => $user,
-                            "request" => $request,
-                            "price" => $price,
-                        ];
-
-                        if($this->jobModel->acceptJob($data)){  
-                            $_SESSION["status"] = "You choose $name to complet your job";                        
-                            redirect("pages/client_dashboard");
-                        }
+                        "job_accepted" => $job,
+                        "user_accepted" => $user,
+                        "request" => $request,
+                        "price" => $price,
+                    ];
+                    if($this->jobModel->acceptJob($data)){  
+                        $_SESSION["status"] = "You choose $name to complet your job";                        
+                        redirect("pages/client_dashboard");
+                    }
     }
-
     public function rejected($user,$job,$rendu){
-        // echo $request;
-        // die();
         $data = [
                             "job_accepted" => $job,
                             "user_accepted" => $user,
@@ -68,12 +68,7 @@ class jobs extends controller
                         }
     }
 
-    // public function getjobs()
-    // {
-    //     if($this->userModel->getjobs()){
-    //         redirect("pages/client_dashboard");
-    //     }
-    // }
+// add new rendu to complete job
     public function new_rendu()
     {
         if(isset($_POST["rendu_client"] )){
@@ -96,7 +91,7 @@ class jobs extends controller
         }
     }
 
-
+//to delete job
     public function deletejob($id){
         $data = [
             "id" => $id,
@@ -107,17 +102,17 @@ class jobs extends controller
         }
     }
 
-
+//to update info profile
     public function update(){
         if(isset($_POST["update"] )){
-
+            //check if user update the password or not
             if(empty($_POST["pwd"])){
                 $pwd = $_POST["oldpwd"];
             }
             else{
                 $pwd =$_POST["pwd"];
             }
-
+            //check if user update the phone or not
             if(empty($_POST["phone"])){
                 $phone = $_POST["oldphone"];
             }
@@ -131,16 +126,12 @@ class jobs extends controller
                             "email" => $_POST["email"],
                             "phone" => $phone,
                         ];
-
-                        var_dump($data);
-
                         if($this->jobModel->update($data)){
                             $_SESSION["status"] = "Your info has been updated";
                             redirect("pages/designer_profile");
                         }
         }
     }
-
 }
 
 

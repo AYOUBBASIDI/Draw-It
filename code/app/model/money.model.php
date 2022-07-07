@@ -37,11 +37,11 @@ class money extends database
     
 }
 
-public function for_money_page(){
-    $this->db->query("SELECT wallet FROM users WHERE id_user = :id" );
-    $this->db->bind(':id', $_SESSION["id"]);
-    $request = $this->db->fetchAll();
-    return $request;
-}
+    public function for_money_page(){
+        $this->db->query("SELECT wallet FROM users WHERE id_user = :id" );
+        $this->db->bind(':id', $_SESSION["id"]);
+        $request = $this->db->fetchAll();
+        return $request;
+    }
 
 }

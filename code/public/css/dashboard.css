@@ -234,7 +234,7 @@ nav{
     border: solid 2px;
     padding: 0 10px;
     width: 30%;
-    height: 48%;
+    height: 50%;
     position: relative;
     color: white;
     font-family: "Itim", cursive;
@@ -412,9 +412,89 @@ option:hover{
   }
   
 
-  @media only screen and (max-width: 600px) {
+  
+
+
+  .seemore{
+    display:none;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: #f2a0fe;
+    width: 10%;
+    height: 100%;
+    transition: width 0.5s;
+    color: black;
+    border-radius: 0 5px 5px 0;
+  }
+  .seemore:hover{
+    width:100%;
+    border-radius:5px;
+  }
+
+  .posted-job:hover .seemore{
+    display:block;
+}
+.seemore .see{
+    transform: rotate(270deg);
+    width: 75px;
+    margin-top: 87px;
+    margin-left: -20px;
+}
+.content-seemore{
+    display:none;
+}
+.content-seemore a
+{
+    text-decoration: none;
+    color: #250555;
+    font-family: "Itim", cursive;
+    font-weight: bold;
+    position: absolute;
+    top: 40%;
+    left: 29%;
+}
+.content-seemore a:hover
+{
+    text-decoration: underline;
+}
+
+.seemore:hover .content-seemore{
+    display:block;
+  }
+
+.seemore:hover .see{
+    display:none;
+}
+
+  .prix{
+    background: #260556;
+    display: flex;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    border-radius: 30px;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    right: 1%;
+    top: 2%;
+  }
+
+  .desdiv{
+    overflow: overlay;
+    height: 42px;
+  }
+
+
+/* .posted-job:hover p{
+    d
+} */
+
+@media only screen and (max-width: 600px) {
       .posted-job{
         width: 92%;
+        height: 35%;
       }
       .dashborad-menu-client{
         width: 92%;
@@ -492,76 +572,16 @@ option:hover{
     .status{
         width: 85%;
     }
+    .seemore{
+        display:block;
+    }
+    .seemore .see {
+        margin-top: 98px;
+    }
+    .norow {
 
-  }
-  .seemore{
-    display:none;
-    position: absolute;
-    top: 0%;
-    right: 0%;
-    background: #f2a0fe;
-    width: 10%;
-    height: 100%;
-    transition: width 0.5s;
-    color: black;
-    border-radius: 0 5px 5px 0;
-  }
-  .seemore:hover{
-    width:100%;
-    border-radius:5px;
-  }
+        width: 56%;
 
-  .posted-job:hover .seemore{
-    display:block;
+        font-size: 12px;
+    }    
 }
-.seemore .see{
-    transform: rotate(270deg);
-    width: 75px;
-    margin-top: 87px;
-    margin-left: -20px;
-}
-.content-seemore{
-    display:none;
-}
-.content-seemore a
-{
-    text-decoration: none;
-    color: #250555;
-    font-family: "Itim", cursive;
-    font-weight: bold;
-    position: absolute;
-    top: 40%;
-    left: 29%;
-}
-.content-seemore a:hover
-{
-    text-decoration: underline;
-}
-
-.seemore:hover .content-seemore{
-    display:block;
-  }
-
-.seemore:hover .see{
-    display:none;
-}
-
-  .prix{
-    background: #260556;
-    display: flex;
-    width: 45px;
-    height: 45px;
-    position: absolute;
-    border-radius: 30px;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    right: 1%;
-    top: 2%;
-  }
-
-
-/* .posted-job:hover p{
-    d
-} */
-
